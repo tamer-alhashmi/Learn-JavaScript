@@ -491,14 +491,10 @@ String Method
     -You can use Concatenate
 */
 
-let a = "Elzero Web School";
+// let a = "Elzero Web School";
 
-console.log((a.charAt(2).toUpperCase())+ a.slice(3,6)); // "Zero"
-console.log(a.substr(a.length - 4, 1).toUpperCase().repeat(8)); // HHHHHHHH
-console.log(a.slice(0, 6).split()); // ['Elzero']
-console.log(a.substr(0, 6) + " " + a.substr(11, 17)); // Elzero School
-console.log(a.substr(0,1) .toLowerCase() + (a.slice(1, 16) .toUpperCase()) + a.substr(-1) .toLowerCase()); // eLZERO WEB SCHOOl
-
-
-
-// # 30 Strings Challange End
+// console.log((a.charAt(2).toUpperCase())+ a.slice(3,6)); // "Zero"
+// console.log(a.substr(a.length - 4, 1).toUpperCase().repeat(8)); // HHHHHHHH
+// console.log(a.slice(0, 6).split()); // ['Elzero']
+// console.log(a.substr(0, 6) + " " + a.substr(11, 17)); // Elzero School
+// console.log(a.substr(0,1) .toLowerCase() + (a.slice(1, 16) .toUpperCase()) + a.substr(-1) .toLowerCase()); // eLZERO WEB SCHOOl
