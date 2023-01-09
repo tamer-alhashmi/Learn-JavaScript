@@ -1,4 +1,4 @@
-// #22 Challange
+// #22 Challenge
 
 // let a = 10;
 // let b = "20";
@@ -69,7 +69,7 @@
 // - Value : 97
 
 
-// Challange 22 Part 2
+// Challenge 22 Part 2
 // let d = "-100";
 // let e = "20";
 // let f = 30;
@@ -78,7 +78,7 @@
 // console.log(-d + ++e*2 + ++f); // 173
 // console.log(++e*2 +-d + f + true); // 173
 
-// End of Challange 22 Part 2
+// End of Challenge 22 Part 2
 
 
 
@@ -88,25 +88,25 @@
 
 
 
-// # 26  Number Challange
+// # 26  Number Challenge
 // let a= 1_00;
 // let b = 2_00.5;
 // let c = 1e2;
 // let d = 2.4;
 
-//  1 - Find smallest number in all variables and return Integer:
+// // 1 - Find smallest number in all variables and return Integer:
 // console.log(Math.trunc(Math.min(a, b, c, d))) // 2
 
-// 2- Use Variables a + b One time to get the needed output
+// // 2- Use Variables a + b One time to get the needed output
 // console.log(Math.trunc(Math.pow(a, 2))); // 10000 
 
-// 3- Get Integer "2" From d variables with 4 methods
+// // 3- Get Integer "2" From d variables with 4 methods
 // console.log(parseInt(d));
 // console.log(Math.floor(d)); //2
 // console.log(Math.round(d)); //2
 // console.log(Math.min(Math.trunc(d))); // 2
 
-// 4- Use Variables b + d to get this values
+// // 4- Use Variables b + d to get this values
 // console.log((Math.trunc(b) / 2 - d ** 4).toFixed(2).toString()); // 66.67 => String
 // console.log(Math.trunc(b / 2 - d ** 4)); // 67 => Number
 
@@ -117,15 +117,15 @@
 
 
 /*
-# 30 Strings Challange Start
+# 30 Strings Challenge Start
     -All Solutiona Must be in one Chain 
     -You can use Concatenate
 */
 
-let a = "Elzero Web School";
+// let a = "Elzero Web School";
 
-console.log((a.charAt(2).toUpperCase())+ a.slice(3,6)); // "Zero"
-console.log(a.substr(a.length - 4, 1).toUpperCase().repeat(8)); // HHHHHHHH
-console.log(a.slice(0, 6).split()); // ['Elzero']
-console.log(a.substr(0, 6) + " " + a.substr(11, 17)); // Elzero School
-console.log(a.substr(0,1) .toLowerCase() + (a.slice(1, 16) .toUpperCase()) + a.substr(-1) .toLowerCase()); // eLZERO WEB SCHOOl
+// console.log((a.charAt(2).toUpperCase())+ a.slice(3,6)); // "Zero"
+// console.log(a.substr(a.length - 4, 1).toUpperCase().repeat(8)); // HHHHHHHH
+// console.log(a.slice(0, 6).split()); // ['Elzero']
+// console.log(a.substr(0, 6) + " " + a.substr(11, 17)); // Elzero School
+// console.log(a.substr(0,1) .toLowerCase() + (a.slice(1, 16) .toUpperCase()) + a.substr(-1) .toLowerCase()); // eLZERO WEB SCHOOl

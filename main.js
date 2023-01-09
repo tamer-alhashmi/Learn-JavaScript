@@ -163,7 +163,7 @@ Tests
 
 
 
-// #22 Challange
+// #22 Challenge
 // let a = 10;
 // let b = "20";
 // let c = 80;
@@ -232,7 +232,7 @@ Tests
 // var z = x + y;
 // alert(z);
 
-// Challange 22 Part 2
+// Challenge 22 Part 2
 // let d = "-100";
 // let e = "20";
 // let f = 30;
@@ -241,7 +241,7 @@ Tests
 // console.log(-d + ++e*2 + ++f); // 173
 // console.log(++e*2 +-d + f + true); // 173
 
-// End of Challange 22 Part 2
+// End of Challenge 22 Part 2
 
 
 // # 23 Numbers 
@@ -331,7 +331,7 @@ Number Methods
 // console.log(Math.trunc(99.5))
 
 
-// # 26  Number Challange
+// # 26  Number Challenge
 
 // let a= 1_00;
 // let b = 2_00.5;
@@ -381,7 +381,7 @@ Number Methods
 // console.log(theName.toUpperCase()); // TAMER
 // console.log(theName.toLowerCase()); // tamer
 
-// // Quik Challange
+// // Quik Challenge
 // // In One Line Get the Letter m alone and UpperCase 
 // console.log(theName.trim().charAt(2).toUpperCase()); // M
 // console.log(theName.trim().charAt(3).toUpperCase())
@@ -486,7 +486,7 @@ String Method
 
 
 /*
-# 30 Strings Challange Start
+# 30 Strings Challenge Start
     -All Solutiona Must be in one Chain 
     -You can use Concatenate
 */
@@ -498,3 +498,294 @@ String Method
 // console.log(a.slice(0, 6).split()); // ['Elzero']
 // console.log(a.substr(0, 6) + " " + a.substr(11, 17)); // Elzero School
 // console.log(a.substr(0,1) .toLowerCase() + (a.slice(1, 16) .toUpperCase()) + a.substr(-1) .toLowerCase()); // eLZERO WEB SCHOOl
+
+
+// # 31 Compersion Operators
+/*
+    - == Equal
+    - != Not Equal
+
+    - === Identical
+    - !== Not Identical
+
+    - > Larg Than
+    - >= Larg Than or Equal
+    - < Smaller Than
+    - <= Smoller Than or Equal
+*/
+// console.log(10 == "10"); // true --> Comper Value Only
+// console.log(-100 == "-100"); // true --> Comper Value Only
+// console.log(10 != "10"); // false --> Comper Value Only
+
+// console.log(10 === "10") //false --> Comper Value + Type
+// console.log(10 !== "10") //true --> Comper Value + Type
+
+// console.log(10 > "10") //false --> Comper Value + Type
+// console.log(10 >= "10") //true --> Comper Value + Type
+// console.log(10 < "10") //false --> Comper Value + Type
+// console.log(10 <= "10") //true --> Comper Value + Type
+
+// console.log(typeof"Tamer" === typeof"Ahmed");
+
+
+// # 32 Logical Operators
+/*
+- ! Not  ================    ==    ==    ==     ===D
+- && And  ================    ==  ==     ==     ===D
+- || Or  ==================    ====      ==     ==
+*/
+
+// console.log(true); // true
+// console.log(!true); // false
+// console.log(false); // false
+// console.log(!false); // true
+// console.log(10 == "10"); // true
+// console.log(!(10 == "10")); // false
+
+// console.log(10 == "10" && 10 > 8 && 10 < 15); // true
+// console.log(10 == "10" || 10 < 15); // true
+// console.log(10 === "10" || 10 > 15); // false
+// console.log(10 == "10" && 10 > 8 || 10 < 15); // true
+// console.log(10 === "10" && 10 > 8 || 10 > 15); // true
+
+
+// **********************************************************************************************************
+// ********************************  #33 & 34  Conditions & Nested Conditions  ******************************
+/*
+Control Flow
+- if
+- else if
+- else
+*/
+
+// let price = 100;
+// let discount = "false";
+// let discountAmount = 30;
+// let Country = "Syria";
+// let student = true;
+
+// if (discount === "true") {
+//     price -= discountAmount;
+// }
+// else if (Country === "Egypt" && student === true ) {
+//     price -= 60;
+// }
+// else if (Country === "KSA" && student === true){
+// price -= 40;
+// }
+
+
+// console.log(price);
+
+// **********************************************************************************************************
+// ********************************  #35 Conditional Ternary Operator  **************************************
+
+// let theName = "Ahmed";
+// let theGender = "Female";
+// let theAge = 30;
+
+// if (theGender === "Male") {
+//     console.log("Mr")
+// }
+// else if (theGender === "Female") {
+//     console.log("Ms")
+// } 
+// else {
+//     console.log("Unknown")
+    
+// };
+
+// // theGender = "Male" ? console.log("Mr") : console.log("Unknown");
+// // theGender = "Male" ? "Mr" : "Unknown";
+// let results = theGender === "Male" ? "Mr" : "unknown";
+// document.write(results)
+
+
+// **********************************************************************************************************
+// ********************************  #36 Nullish Coalescing Operator And Logical Or   ****************************
+
+/*
+Logical Or ||
+ -- Null + uNDEFIND + Any False Value
+ Nullish Coalescing Operator ??
+  -- Null + Undefined
+*/
+
+// console.log(Boolean(100));
+// console.log(Boolean(-100));
+// console.log(Boolean(0));
+// console.log(Boolean(""));
+// console.log(Boolean(null));
+
+// let price = "tamer";
+// console.log(`The Price Is ${price}`)
+// document.write(`The Price Is ${price}`)
+
+// console.log(`The Price Is ${price ||200}`) 
+// document.write(`The Price Is ${price ||200}`)
+
+// console.log(`The Price Is ${price ??200}`) 
+// document.write(`The Price Is ${price ??200}`)
+
+
+// **********************************************************************************************************
+// ********************************         # 37 If Condition Challenge          ****************************
+
+// Tasks 1
+
+// let theAge = "23";
+
+// theAge < 10 
+// ? console.log(10) 
+// : theAge >= 10 && theAge <= 40 
+// ? console.log("10 to 40") 
+// : theAge > 40 
+// ? console.log("> 40") 
+// : console.log("Unknown");
+
+// Tasks 2
+
+// let st = "Elzero Web School";
+
+// if (((st.length*2).toString()) === "34"){
+//     console.log("Good");
+// }
+
+// // W Position May Change
+
+// if (st[st.indexOf("W")].toLowerCase() === "w"){
+//     console.log("Good");
+// }
+
+
+// if (st.length !== "string"){
+//     console.log("Good");
+// }
+
+// if (typeof(st.length) === "number"){
+//     console.log("Good");
+// }
+
+// if (st.slice(0,6)+st.slice(0,6) === "ElzeroElzero"){
+//     console.log("Good");
+// }
+
+// **********************************************************************************************************
+// ********************************         # 38 Switch Statement           *********************************
+
+// let day = "lk"; // Most be the Same Type 
+
+// switch (day) {
+//     case 0:
+//         console.log("Saturday");
+//         break;
+//     case 1:
+//     case 3:
+//     case 5:
+//         console.log("Monday");
+//         break;
+//     case 2:
+//     case 4:
+//     case 6:
+//         console.log("Wednesday");
+//         break;
+
+//     default:
+//         console.log("Unknown day");
+//         break;
+// }
+
+// **********************************************************************************************************
+// ********************************         # 39 If & Switch Challenge           ****************************
+
+// Switch Challenge
+
+let job = "Manager";
+let salary = 0;
+
+if (job === "Manager"){
+    salary = 8000;
+}else if (job ==="IT" || job === "Support"){
+    salary = 6000;
+}else if (job ==="Developer" || job === "Designer") {
+    salary = 7000
+}else {
+    salary = 4000;
+}
+console.log(job + " Sallary Is  " + "$"+salary);
+
+switch (job) {
+    case "Manager":
+        salary = 8000;
+        break;
+    case "IT":
+    case "Support":
+        salary = 6000;
+        break;
+    case "Developer":
+    case "Designer":
+        salary = 7000;
+        break;
+    default:
+        salary = 4000;
+        break;
+};
+console.log(job + " Sallary Is  " + "$"+salary);
+
+// Tasks 2 # If Challenge
+
+let holidays = 3;
+let money = 0;
+let print = `I'm a ${job} My Salary Is ${salary} My Total Monthly is ${Number(salary + money)}`;
+
+switch (holidays) {
+    case 0:
+        money = 5000
+        console.log(print)
+        break;
+    case 1:
+    case 2:
+        money = 3000
+        console.log(print)
+        break;
+    case 3:
+        money = 2000
+        console.log(print)
+        break;
+    case 4:
+        money = 1000
+        console.log(print)
+        break;
+    case 5:
+        money = 0
+        console.log(print)
+        break;
+
+    default:
+        money = 0
+        console.log(print)
+        break;
+};
+
+
+if (holidays === 0) {
+    money = 5000
+    console.log(print)
+} 
+else if (holidays === 1 || 2) {
+    money = 3000
+    console.log(print)} 
+else if (holidays === 3) {
+    money = 2000
+    console.log(print)} 
+else if (holidays === 4) {
+    money = 1000
+    console.log(print)}
+else if (holidays === 5) {
+    money = 0
+    console.log(print)}
+else {
+    money = 0
+    console.log(print)};
+
+    
