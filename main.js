@@ -700,92 +700,266 @@ Logical Or ||
 
 // Switch Challenge
 
-let job = "Manager";
-let salary = 0;
+// let job = "Manager";
+// let salary = 0;
 
-if (job === "Manager"){
-    salary = 8000;
-}else if (job ==="IT" || job === "Support"){
-    salary = 6000;
-}else if (job ==="Developer" || job === "Designer") {
-    salary = 7000
-}else {
-    salary = 4000;
+// if (job === "Manager"){
+//     salary = 8000;
+// }else if (job ==="IT" || job === "Support"){
+//     salary = 6000;
+// }else if (job ==="Developer" || job === "Designer") {
+//     salary = 7000
+// }else {
+//     salary = 4000;
+// }
+// console.log(job + " Sallary Is  " + "$"+salary);
+
+// switch (job) {
+//     case "Manager":
+//         salary = 8000;
+//         break;
+//     case "IT":
+//     case "Support":
+//         salary = 6000;
+//         break;
+//     case "Developer":
+//     case "Designer":
+//         salary = 7000;
+//         break;
+//     default:
+//         salary = 4000;
+//         break;
+// };
+// console.log(job + " Sallary Is  " + "$"+salary);
+
+// // Tasks 2 # If Challenge
+
+// let holidays = 3;
+// let money = 0;
+// let print = `I'm a ${job} My Salary Is ${salary} My Total Monthly is ${Number(salary + money)}`;
+
+// switch (holidays) {
+//     case 0:
+//         money = 5000
+//         console.log(print)
+//         break;
+//     case 1:
+//     case 2:
+//         money = 3000
+//         console.log(print)
+//         break;
+//     case 3:
+//         money = 2000
+//         console.log(print)
+//         break;
+//     case 4:
+//         money = 1000
+//         console.log(print)
+//         break;
+//     case 5:
+//         money = 0
+//         console.log(print)
+//         break;
+
+//     default:
+//         money = 0
+//         console.log(print)
+//         break;
+// };
+
+
+// if (holidays === 0) {
+//     money = 5000
+//     console.log(print)
+// } 
+// else if (holidays === 1 || 2) {
+//     money = 3000
+//     console.log(print)} 
+// else if (holidays === 3) {
+//     money = 2000
+//     console.log(print)} 
+// else if (holidays === 4) {
+//     money = 1000
+//     console.log(print)}
+// else if (holidays === 5) {
+//     money = 0
+//     console.log(print)}
+// else {
+//     money = 0
+//     console.log(print)};
+
+
+// *******************************************************************************************************
+// ********************************         # 40 Array Big Introduction       ****************************
+
+// let myFriends = ["Ahmed", "Khaled", "Hisham", ["Tamer", "Moataz", "Ehab"]];
+
+// console.log(`Hello ${myFriends[1]}`); // Hello Khaled
+// console.log(`Hello ${myFriends[1][0]}`); // Hello K
+// console.log(`${myFriends[1][2]}`); // a
+// console.log(`Hello ${myFriends[2]}`); // Hello Hisham
+// console.log(`Hello ${myFriends[3]}`); // Hello Tamer,Moataz,Ehab
+
+// console.log(myFriends); //(4) ['Ahmed', 'Khaled', 'Hisham', Array(3)]
+// myFriends[1] = "Sami";
+// console.log(myFriends);
+// myFriends[3][2] = "Nour Eldein";
+// console.log(myFriends); // (4) ['Ahmed', 'Sami', 'Hisham', Array(3)]
+
+
+// // To Be Sure If Module Is Array Using "Array.isArray"
+// console.log(`To Be Sure If Module Is Array Using "Array.isArray"`);
+// console.log(Array.isArray(myFriends)); //true To Know if (myFriens) is Array Or No
+
+
+// *******************************************************************************************************
+// ********************************         # 41 Using Length With Array       ****************************
+
+// console.log(myFriends.length); // 4
+// myFriends[4] = "Gamal";
+// console.log(myFriends);// (5) ['Ahmed', 'Sami', 'Hisham', Array(3), 'Gamal']
+// myFriends[myFriends.length] = "Ashraf"; 
+// console.log(myFriends); // (6) ['Ahmed', 'Sami', 'Hisham', Array(3), 'Gamal', 'Ashraf']
+
+// // To update last array in Module
+// myFriends[myFriends.length - 1] = "Samer";
+// console.log(myFriends);
+
+// // To Print Aspasific array without other "To Control The Module"
+// myFriends.length = 3;
+// console.log(myFriends); // (3) ['Ahmed', 'Sami', 'Hisham']
+// myFriends.length = 2;
+// console.log(myFriends); // (2) ['Ahmed', 'Sami']
+
+
+// *******************************************************************************************************
+// ********************************         # 42 Add And Remove From Array       *************************
+
+// myFriends Module is set before # 40
+
+// console.log(myFriends); // (4) ['Ahmed', 'Sami', 'Hisham', Array(3)]
+
+// // Use ** unshift ** to add array to the Start of Module
+// console.log(" Use ** unshift ** to add array to the Start of Module")
+// myFriends.unshift ("Radi", "Nabil"); // (6) ['Radi', 'Nabil', 'Ahmed', 'Sami', 'Hisham', Array(3)]
+// console.log(myFriends);
+
+// // Use ** push ** to add array to the End of Module
+// console.log("Use ** push ** to add array to the End of Module")
+// myFriends.push ("Randa", "Zinab"); // (6) (8) ['Radi', 'Nabil', 'Ahmed', 'Sami', 'Hisham', Array(3), 'Randa', 'Zinab']
+// console.log(myFriends);
+// console.log(myFriends.length)
+
+// // myFriends.shift (); 
+// // console.log(myFriends); // (6) (8) ['Radi', 'Nabil', 'Ahmed', 'Sami', 'Hisham', Array(3), 'Randa', 'Zinab']
+
+// // To Remove First Array From Module Using ".shift "
+
+// console.log(`To Remove First Array From Module Using ".shift "`)
+// let  first = myFriends.shift (); // To remove first array "Using Shift"
+// console.log(first); // Nabil
+// console.log(`First Name Is ${first}`); //First Name Is Nabil
+// console.log(myFriends); //  (7) ['Nabil', 'Ahmed', 'Sami', 'Hisham', Array(3), 'Randa', 'Zinab']
+// console.log(myFriends.length); // 7
+
+// // To Remove Last Array From Module Using ".pop "
+
+// console.log(`To Remove Last Array From Module Using ".pop "`)
+// let  last = myFriends.pop (); // To remove last array "Using pop"
+// console.log(last); // Zinab
+// console.log(`First Name Is ${last}`); // First Name Is Zinab
+// console.log(myFriends); // (6) ['Nabil', 'Ahmed', 'Sami', 'Hisham', Array(3), 'Randa']
+// console.log(myFriends.length); // 6
+
+// *******************************************************************************************************
+// ********************************             # 43 Search in Array  index $ lastIndexOf           *************************
+
+// console.log(myFriends); //(4) ['Ahmed', 'Khaled', 'Hisham', Array(3)]
+// console.log(myFriends.indexOf("Hisham")); // 2
+// console.log(myFriends.indexOf("Tamer")); // -1
+
+// let addFirst = myFriends.push("Ahmed") ;
+// console.log(myFriends); // (5) ['Ahmed', 'Khaled', 'Hisham', Array(3), 'Ahmed']
+
+// console.log(myFriends.indexOf("Ahmed")); // 0 Search by a spacific point
+// console.log(myFriends.indexOf("Ahmed", 2)); // 4 Search by a spacific point
+// console.log(myFriends.lastIndexOf("Ahmed")); // 4 Search by a spacific point
+// console.log(myFriends.lastIndexOf("Ahmed", -2)); // 0 Search by a spacific point
+// if (myFriends.lastIndexOf("Osama") === -1);
+// console.log("Not Found"); // Not Found
+// console.log(myFriends.indexOf("Osama")); // -1 
+// console.log(myFriends.lastIndexOf("Osama")); // -1
+// *******************************************************************************************************
+// ********************************             # 44 Sorting Array          *************************
+// let myFriends = [10, "Sayed", "Mohamed", "90", 1000, 100, 20, "10", -20, -10];
+// console.log(myFriends); // (10) [10, 'Sayed', 'Mohamed', '90', 1000, 100, 20, '10', -20, -10]
+// console.log(myFriends.sort());  // (10) [-10, -20, 10, '10', 100, 1000, 20, '90', 'Mohamed', 'Sayed']
+// console.log(myFriends.reverse());  // (10) ['Sayed', 'Mohamed', '90', 20, 1000, 100, '10', 10, -20, -10]
+// console.log(myFriends.sort().reverse()); // (10) ['Sayed', 'Mohamed', '90', 20, 1000, 100, '10', 10, -20, -10]
+// *******************************************************************************************************
+// ********************************             # 45 Array Method Slicing           *************************
+// let myFriends = ["Ahmed", "Sayed", "Ali" , " Osama", "Tamer", "Ameer"];
+// console.log(myFriends); // (6) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer']
+// // يجب تحديد بداية ونهاية ال slice
+// console.log(myFriends.slice()); // (6) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer'] Start Slicing From index 0 
+// console.log(myFriends.slice(2)); // (4) ['Ali', ' Osama', 'Tamer', 'Ameer'] Start slicing from index 2
+// console.log(myFriends.slice(1, 3)); // (2) ['Sayed', 'Ali'] Not Incloding The End Of Lenght
+// console.log(myFriends.slice(-3)); // (3) [' Osama', 'Tamer', 'Ameer']
+// console.log(myFriends.slice(1, -2)); // (3) ['Sayed', 'Ali', ' Osama']
+// console.log(myFriends); // (6) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer']
+// // *********** VII ************
+// myFriends.splice(0, 0, "Kareem", "Tarek");//(0) = Start Index & (0) = What do you want to Delete & Then >>> What you need to Add to array "Kareem", "Tarek"
+// console.log(myFriends) ; // (8) ['Kareem', 'Tarek', 'Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer']
+// console.log(myFriends.splice(0, 1)) ; // ['Kareem']
+// console.log(myFriends); // (7)  ['Tarek', 'Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer']
+// console.log(myFriends.splice(0, 1)) ; // ['Tarek']
+// console.log(myFriends.splice(-2, 1)) ; // ['Tamer']
+// console.log(myFriends);(5) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Ameer']
+// *******************************************************************************************************
+// ********************************             # 46 Joining Array          *************************
+// let myFriends = ["Ahmed", "Sayed", "Ali" , " Osama", "Tamer", "Ameer"];
+// let myNewFriends = ["Hisham", " Ehab"];
+// let schoolFriends = ["Moaataz", "Nour eldien"];
+// console.log(myFriends); // (6) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer']
+// let allFriends = myFriends.concat(myNewFriends, schoolFriends)
+// console.log(allFriends); // (10) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer', 'Hisham', ' Ehab', 'Moaataz', 'Nour eldien']
+// console.log(allFriends.join(" | ")); // Ahmed | Sayed | Ali |  Osama | Tamer | Ameer | Hisham |  Ehab | Moaataz | Nour eldien
+// *******************************************************************************************************
+// ********************************             # 47 Array Challange          *************************
+// let zero = 0;
+// let counter = 3;
+// let my = ["Ahmed", "Mazero", "Elham" , "Osama", "Gamal", "Ameer"];
+// // console.log(my.slice(zero, +counter));
+// console.log(my.slice(zero, ++counter).reverse()); // (4) ['Osama', 'Elham', 'Mazero', 'Ahmed']
+// console.log(my.slice(++zero, --counter).reverse()); // (2) ['Elham', 'Mazero']
+// console.log(my.unshift("Elzero"), my.slice(--zero, ++zero)); // ['Elzero']
+// console.log(my[--zero].charAt(++counter)+my[zero].charAt(++counter).toUpperCase()); // rO
+// *******************************************************************************************************
+// ********************************             # 48 Loop -  for and concebt of Loop          *************************
+/*
+Loop
+- For [1] [2] [3] {
+    //Block of code
 }
-console.log(job + " Sallary Is  " + "$"+salary);
-
-switch (job) {
-    case "Manager":
-        salary = 8000;
-        break;
-    case "IT":
-    case "Support":
-        salary = 6000;
-        break;
-    case "Developer":
-    case "Designer":
-        salary = 7000;
-        break;
-    default:
-        salary = 4000;
-        break;
-};
-console.log(job + " Sallary Is  " + "$"+salary);
-
-// Tasks 2 # If Challenge
-
-let holidays = 3;
-let money = 0;
-let print = `I'm a ${job} My Salary Is ${salary} My Total Monthly is ${Number(salary + money)}`;
-
-switch (holidays) {
-    case 0:
-        money = 5000
-        console.log(print)
-        break;
-    case 1:
-    case 2:
-        money = 3000
-        console.log(print)
-        break;
-    case 3:
-        money = 2000
-        console.log(print)
-        break;
-    case 4:
-        money = 1000
-        console.log(print)
-        break;
-    case 5:
-        money = 0
-        console.log(print)
-        break;
-
-    default:
-        money = 0
-        console.log(print)
-        break;
-};
-
-
-if (holidays === 0) {
-    money = 5000
-    console.log(print)
-} 
-else if (holidays === 1 || 2) {
-    money = 3000
-    console.log(print)} 
-else if (holidays === 3) {
-    money = 2000
-    console.log(print)} 
-else if (holidays === 4) {
-    money = 1000
-    console.log(print)}
-else if (holidays === 5) {
-    money = 0
-    console.log(print)}
-else {
-    money = 0
-    console.log(print)};
-
-    
+*/
+// for (let i = 0; i < 10; i++ ){
+//     console.log(i)
+// }
+// *******************************************************************************************************
+// ********************************             # 49 Looping in Sequance          *************************
+let myFriends = [1, 2, "Osama", "Tamer", 5,  "Ehab", 6, 8, "Hisham", "Moataz"];
+// console.log(myFriends[0]);
+// console.log(myFriends[1]);
+// console.log(myFriends[2]);
+// console.log(myFriends[3]);
+// console.log(myFriends[4]);
+let onlyName = []
+for (let i = 0; i < myFriends.length; i++){
+    console.log(myFriends[i]);
+}
+for (let i =0; i < myFriends.length; i++){
+    if (typeof myFriends[i] === "string"){
+        onlyName.push(myFriends[i]);
+    }
+}
+console.log(onlyName); // (5) ['Osama', 'Tamer', 'Ehab', 'Hisham', 'Moataz']
