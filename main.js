@@ -442,7 +442,7 @@ String Method
 // let a= "Elzero Web School";
 
 // console.log(a.length); // 17
-// console.log(a.substring()); // Elzero Web School
+// console.log(a.substring(0, 1)); // Elzero Web School
 // console.log(a.substring(0, 6)); // Elzero
 // console.log(a.substring(0, 10)); // Elzero Web
 // console.log(a.substring(a.length - 1)); // l
@@ -811,9 +811,10 @@ Logical Or ||
 // console.log(`To Be Sure If Module Is Array Using "Array.isArray"`);
 // console.log(Array.isArray(myFriends)); //true To Know if (myFriens) is Array Or No
 
-
 // *******************************************************************************************************
 // ********************************         # 41 Using Length With Array       ****************************
+
+// let myFriends = ["Ahmed", "Khaled", "Hisham", ["Tamer", "Moataz", "Ehab"]];
 
 // console.log(myFriends.length); // 4
 // myFriends[4] = "Gamal";
@@ -835,14 +836,16 @@ Logical Or ||
 // *******************************************************************************************************
 // ********************************         # 42 Add And Remove From Array       *************************
 
+// let myFriends = ["Ahmed", "Khaled", "Hisham", ["Tamer", "Moataz", "Ehab"]];
+
 // myFriends Module is set before # 40
 
-// console.log(myFriends); // (4) ['Ahmed', 'Sami', 'Hisham', Array(3)]
+// console.log(myFriends); // (4) ['Ahmed', 'Khaled', 'Hisham', Array(3)]
 
 // // Use ** unshift ** to add array to the Start of Module
 // console.log(" Use ** unshift ** to add array to the Start of Module")
-// myFriends.unshift ("Radi", "Nabil"); // (6) ['Radi', 'Nabil', 'Ahmed', 'Sami', 'Hisham', Array(3)]
-// console.log(myFriends);
+// myFriends.unshift ("Radi", "Nabil"); 
+// console.log(myFriends); // (6) ['Radi', 'Nabil', 'Ahmed', 'Sami', 'Hisham', Array(3)]
 
 // // Use ** push ** to add array to the End of Module
 // console.log("Use ** push ** to add array to the End of Module")
@@ -889,6 +892,7 @@ Logical Or ||
 // console.log("Not Found"); // Not Found
 // console.log(myFriends.indexOf("Osama")); // -1 
 // console.log(myFriends.lastIndexOf("Osama")); // -1
+
 // *******************************************************************************************************
 // ********************************             # 44 Sorting Array          *************************
 // let myFriends = [10, "Sayed", "Mohamed", "90", 1000, 100, 20, "10", -20, -10];
@@ -896,6 +900,7 @@ Logical Or ||
 // console.log(myFriends.sort());  // (10) [-10, -20, 10, '10', 100, 1000, 20, '90', 'Mohamed', 'Sayed']
 // console.log(myFriends.reverse());  // (10) ['Sayed', 'Mohamed', '90', 20, 1000, 100, '10', 10, -20, -10]
 // console.log(myFriends.sort().reverse()); // (10) ['Sayed', 'Mohamed', '90', 20, 1000, 100, '10', 10, -20, -10]
+
 // *******************************************************************************************************
 // ********************************             # 45 Array Method Slicing           *************************
 // let myFriends = ["Ahmed", "Sayed", "Ali" , " Osama", "Tamer", "Ameer"];
@@ -915,6 +920,7 @@ Logical Or ||
 // console.log(myFriends.splice(0, 1)) ; // ['Tarek']
 // console.log(myFriends.splice(-2, 1)) ; // ['Tamer']
 // console.log(myFriends);(5) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Ameer']
+
 // *******************************************************************************************************
 // ********************************             # 46 Joining Array          *************************
 // let myFriends = ["Ahmed", "Sayed", "Ali" , " Osama", "Tamer", "Ameer"];
@@ -924,6 +930,7 @@ Logical Or ||
 // let allFriends = myFriends.concat(myNewFriends, schoolFriends)
 // console.log(allFriends); // (10) ['Ahmed', 'Sayed', 'Ali', ' Osama', 'Tamer', 'Ameer', 'Hisham', ' Ehab', 'Moaataz', 'Nour eldien']
 // console.log(allFriends.join(" | ")); // Ahmed | Sayed | Ali |  Osama | Tamer | Ameer | Hisham |  Ehab | Moaataz | Nour eldien
+
 // *******************************************************************************************************
 // ********************************             # 47 Array Challange          *************************
 // let zero = 0;
@@ -934,6 +941,7 @@ Logical Or ||
 // console.log(my.slice(++zero, --counter).reverse()); // (2) ['Elham', 'Mazero']
 // console.log(my.unshift("Elzero"), my.slice(--zero, ++zero)); // ['Elzero']
 // console.log(my[--zero].charAt(++counter)+my[zero].charAt(++counter).toUpperCase()); // rO
+
 // *******************************************************************************************************
 // ********************************             # 48 Loop -  for and concebt of Loop          *************************
 /*
@@ -945,21 +953,255 @@ Loop
 // for (let i = 0; i < 10; i++ ){
 //     console.log(i)
 // }
+
 // *******************************************************************************************************
 // ********************************             # 49 Looping in Sequance          *************************
-let myFriends = [1, 2, "Osama", "Tamer", 5,  "Ehab", 6, 8, "Hisham", "Moataz"];
-// console.log(myFriends[0]);
-// console.log(myFriends[1]);
-// console.log(myFriends[2]);
-// console.log(myFriends[3]);
-// console.log(myFriends[4]);
-let onlyName = []
-for (let i = 0; i < myFriends.length; i++){
-    console.log(myFriends[i]);
-}
-for (let i =0; i < myFriends.length; i++){
-    if (typeof myFriends[i] === "string"){
-        onlyName.push(myFriends[i]);
-    }
-}
-console.log(onlyName); // (5) ['Osama', 'Tamer', 'Ehab', 'Hisham', 'Moataz']
+// let myFriends = [1, 2, "Osama", "Tamer", 5,  "Ehab", 6, 8, "Hisham", "Moataz"];
+// // console.log(myFriends[0]);
+// // console.log(myFriends[1]);
+// // console.log(myFriends[2]);
+// // console.log(myFriends[3]);
+// // console.log(myFriends[4]);
+// let onlyNames = []
+//     for (let i = 0; i < myFriends.length; i++){
+//     console.log(myFriends[i]);
+// }
+// for (let i =0; i < myFriends.length; i++){      
+//     if (typeof myFriends[i] === "string"){
+//         onlyNames.push(myFriends[i]);
+//     }
+// }
+// console.log(onlyNames); // (5) ['Osama', 'Tamer', 'Ehab', 'Hisham', 'Moataz']
+
+// ********************************************************************************************
+// ********************************          # 50 Nasted Loop         *************************
+
+/*
+Loop
+- Nested Loops
+*/
+
+// let products = ["Keybord", "Mouse", "Pen", "Pad", "Monitor"];
+// let color = ["Red", "Green", "Black"];
+// let models = [2020, 2021];
+
+// for (let i = 0; i < products.length; i++){
+//     console.log("=" .repeat(15))
+//     console.log(`# ${products[i]}`);
+//     console.log("=" .repeat(15))
+//     console.log(`- Colors: `)
+//     for (let j = 0; j <color.length; j++){
+//         console.log(color[j]);
+//     }
+//     console.log("- Models: ")
+//     for (let m = 0; m < models.length; m++){
+//         console.log(models[m]);
+//     }
+// }
+
+
+// ********************************************************************************************
+// ********************************          # 51 Loop Control        *************************
+/*
+Loop
+- Break
+- Continue
+- Lable
+*/
+
+// let products = ["Keybord", "Mouse", 10, 21, "Pen", 15, 20, "Pad", "Monitor"];
+// let colors = ["Red", "Green", "Black"];
+// let models = [2020, 2021, "2022 No Stock", 2023];
+
+// mainLoop: for (let i = 0; i < products.length; i++){        // add a lable to Loop
+//     if (typeof products[i] === "number"){
+//         continue; // ********************************       إلغاء عرض بعض القيم  Loop - continue
+//     }
+//     console.log(`# | ${products[i]}`);
+//     console.log("=" .repeat(15));
+//     nestedLoop: for (let c = 0; c < colors.length; c++){    // add a lable to Loop
+//         console.log(`- ${colors[c]}`);
+//     }
+//     for (let m = 0; m < models.length; m++){
+//         console.log(models[m]);
+//     }
+//     if (products[i] === "Pen"){
+//         break mainLoop; // ********************************           إيقاف فى مكان محدد Loop - break
+//     }    
+// }
+
+
+// ********************************************************************************************
+// ********************************          # 52 Loop Advanced Example        *************************
+
+// let products = ["Keybord", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+// let i = 0
+// for (; i < products.length; ){
+//     console.log(products[i]);
+//     i++;
+//     if (i === products.length) break;
+// }
+
+// ********************************************************************************************
+// ********************************          # 53 Loop Practice add products to page        ******************
+
+// let products = ["Keybord", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+// let colors = ["Red", "Green", "Blue"];
+// let showCount = 5;
+
+// document.write(`<h1 class="p-10 bord-b-eee c-blue txt-shad w-fit d-flex ">Show ${showCount} Products:</h1>`);
+
+// for (let i=0; i < showCount; i++){
+//     document.write(`<div class="p-10">`)
+//     document.write(
+//         `<h3 class="fs-25 bord-b-eee w-fit pb-10 flex-just-c">
+//         <span class="mr-10 c-white fs-20 flex-just-c bg-blue rad-half w-30 h-30">${i+1}
+//         </span> ${products[i]}
+//         </h3>`
+//         )
+//     for (let c = 0; c < colors.length; c++){
+//         document.write(`<p class="p-10">${colors[c]}</p>`) // As A Listed Loop
+//     }
+//     document.write(`<p class="p-10">${colors.join(" | ")}</p>`) // As A String
+//     document.write(`</div>`)
+// }
+
+// ********************************************************************************************
+// ********************************          # 54 Loop While       ******************
+
+// let products = ["Keybord", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+// let index = 0;
+
+// while (index < products.length) {
+//     console.log(products[index]);
+//     index += 1;
+// }
+
+
+// ***************************************************************************************
+// ********************************          # 55 Loop Do / While       ******************
+
+// let products = ["Keybord", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+// let i = 0;
+// do {
+// console.log(i);
+// i++;
+// } while (false) ;
+// console.log(i);
+
+
+// ***************************************************************************************
+// ********************************          # 56 Loop Challenge       ******************
+
+// let myAdmins = ["Ahmed", "Osama", "Sayed", "rehab", "Stop", "Samera"];
+// let myEmployees = ["Amgad", "Samah", "Ameer", "Omar", "Ragab", "Rawda", "Othman", "Amany", "Samia", "Rami", "Aaseer", "Onel", "Sedan"];
+// let counter=0;
+
+// ************ First Ansower
+// adminLoop: for (let i=0; i < myAdmins.length; i++){
+// if (myAdmins[i] === "Stop"){break adminLoop;}
+//     document.write(`<h2 class="p-10 bord-b-eee c-blue txt-shad w-fit d-flex ">Team [${i+1}] Admin is "${myAdmins[i]}"</h2>`);
+//     document.write(`<h3 class="p-10 mb-0">Team members :</h3> `);
+//     let counter=0;
+//     empLoop: for (let p = 0; p < myEmployees.length; p++){
+//         if (myAdmins[i][0] === myEmployees[p][0]){
+//             document.write(`<div class=" ml-10">
+//             <p class="mt=0">[${++counter}] ${myEmployees[p]}</p>
+//             </div>`);            
+//             counter +=0
+//         }
+//     }
+// };
+
+// ************ Another Ansower
+
+// adminLoop: for (let i=0; i < myAdmins.length; i++){
+//     if (myAdmins[i] === "Stop"){
+//         break adminLoop;}
+//         document.write(`<div class="bg-eee rad-6 mt-20 bord-b-5-alt-blue w-fit txt-c d-flex">
+//         <h2 class="p-10 c-blue txt-shad w-fit d-flex ">Team [${i+1}] Admin is "${myAdmins[i]}"</h2>
+//         </div>`)
+//         document.write(`<div>
+//         <h3 class="p-10 mb-5 mt-5">Team members :</h3>
+//         </div>`);
+//             empLoop: for (let p = 0; p < myEmployees.length; p++){
+//                 if (myAdmins[i][0] === myEmployees[p][0]){
+//                     document.write(`<div class=" ml-10">
+//                     <p class="mt=5 mb-10">[${++counter}] ${myEmployees[p]}</p>
+//                     </div>`);
+//                     counter +=0
+//                 }
+//             }
+// }
+
+
+// ***************************************************************************************
+// *************     # 57 & 58 Function Basic And Advsnced Examples      **************
+/*
+Function
+- What is Function ?
+- User-Defined vs Buikt in
+- Syntax + Basic Usage
+- Example from real life
+- Practical Examply
+- Function With " If, for"
+*/
+
+// function sayHallo(userName, age){
+//     if (age < 20){
+//         console.log(`Heloo ${userName} This App is not suitable for you [age under 20]`)
+//     }else {
+//         console.log(`Hello ${userName} Your Age Is ${age}`);
+//     }
+// }
+// sayHallo("Tamer", 42);
+// sayHallo("Nancy", 32);
+// sayHallo("Ashraf", 19);
+// sayHallo("Ahmed", 20);
+
+// function generatYears(start, end, exclude){
+//     for (let i = start; i<= end; i++){
+//         if (i === exclude){
+//             continue;
+//         }else {
+//             console.log(i);
+//         }
+//     }
+// }
+
+// generatYears(1980, 2023, 2020)
+
+
+
+// ***************************************************************************************
+// ********************************          # 59 Function return and uses cases      ******************
+
+/*
+Function
+- Return
+- Automatic Semicolon [No line termenator allowed]
+- Interruptting
+*/
+
+// function generatYears(start, end){
+//     for (let i = start; i <= end; i++){
+//         console.log(i);
+//         if (i === 15){
+//             return;
+//         }
+//     };
+// }
+// generatYears (10, 20);
+
+
+// ***************************************************************************************
+// ********************************          # 60 Function Defult Parameters      ******************
+
+/*
+Function
+- Default functio parameters
+- Function parameters default [Undefined]
+- Old Strategies [Condition + Logical Or]
+- ES6 Method
+*/
+
