@@ -1204,4 +1204,397 @@ Function
 - Old Strategies [Condition + Logical Or]
 - ES6 Method
 */
+// ************************************** ( 1 )
 
+// let lableStyle = `class="fs-20 d-flex p-10 bg-eee rad-6 mt-20 bord-b-5-alt-blue w-fit txt-c d-flex"`
+// function sayHallo (userName, age){
+//     if (age < 20){
+//         document.write(`<div ${lableStyle}> Hello ${userName} This app is not suitable for you</div>`)
+//     }else if (age === undefined){
+//         document.write(`<div ${lableStyle}>Hello ${userName} You age is<span class="c-red fs-20">[ Unknown ] App is not avilable for you</span> </div>`);
+//     }
+//     else {
+//         document.write(`<div ${lableStyle}>Hello ${userName} You age is<span class="c-red fs-20">[ ${age} ]</span> App is avilable for you</div>`)
+//     }
+// }
+// sayHallo("Tamer", 42);
+// sayHallo("Ahmed", 25);
+// sayHallo("Nancy", 20);
+// sayHallo("Medhat", 19);
+// sayHallo("3esam");
+// sayHallo("Ashraf", 30);
+
+// ****************************************** ( 2 )
+
+// function sayHallo(userName, age) {
+//     // if (age === undefined){
+//     //     age = "Unknown"
+//     // }
+//     age = age || "unknown"   // True to false pattern
+//     return `Hello ${userName} Your age is ${age}`;
+// }
+// console.log(sayHallo("Osama")); // Hello Osama Your age is أكتب سنك يااااد
+
+// function sayHallo(userName, age){
+//     // age = age || "Unknown";  // True to false pattern
+//     if (age === undefined){
+//         age = "Unknown"
+//     }
+//     return `Hello ${userName} Your Age is ${age}`
+// }
+// console.log(sayHallo ("Tamer")) // Hello Tamer Your Age is Unknown
+
+// *************************** ( 3 ) To Make default Parameters ****************
+
+// function sayHallo(userName = "Unknown", age = "Unknown"){ //  <<<<<<<< Put default value in Function Parameters
+//     return `Hello ${userName} Your Age is ${age}`
+// }
+// console.log(sayHallo ()); // Hello Unknown Your Age is Unknown
+
+
+// ***************************************************************************************
+// ********************************          # 61 Rest Parameters      ******************
+/*
+Function 
+- Rest Parameter
+- Only One Allowed
+- Must br last element
+*/
+
+// function calc (num1, num2, num3) {
+//     return num1 + num2 + num3
+// }
+// *********** هنا عدد Argument سيكون غير محدود
+// console.log(calc (10, 20)); // 30
+// console.log(calc (10, 20, 25)); // 55
+
+//****************************************** OR *********************************
+
+// Use Rest Parameters ******** يمكنك السماح لل "فنكشن " بأستقبال أي عدد من "الأرجيومنت" هنا********
+// -Make Array of function
+
+// function calc(...numbers){
+//     // console.log(Array.isArray(numbers));
+//     let result= 0;
+//     for (let i = 0; i <numbers.length; i++){
+//         result += numbers[i];
+//     }
+//     return `Final Results is ${result}`;
+// };
+// console.log(calc(10, 20, 30, 50, 105)); // Final Results is 215
+
+// ***************************************************************************************
+// ********************************          # 62 Function Advanced Practice      ******************
+
+/*
+Function Advanced Practice 
+- Parameters
+- Default
+- Rest
+- Loop
+- Condition
+*/
+
+// function showInfo(us = "Un", ag = "Un", rt = 0, show = "Yes", ...sk) {
+//   document.write(`<div>`);
+//   document.write(`<h2>Welcome, ${us}</h2>`);
+//   document.write(`<p>Age: ${ag}</p>`);
+//   document.write(`<p>Hour Rate: $${rt}</p>`);
+//   if (show === "Yes"){
+//     if (sk.length > 0){
+//             document.write(`<p>Skills : ${sk.join(" | ")}</p>`);
+//     }else {
+//             document.write(`<p>Skills: No Skills</p>`);
+//     }
+//   }else {
+//     document.write(`<p>Skills is Hidden</p>`);
+//   }
+//     document.write(`</div>`);
+// }
+// showInfo("Tamer", 42, 15, "No", "HTML", "CSS");
+
+// ***************************************************************************************
+// **********          # 63 Random Argument Function Challenge      *******
+
+// function showDetails(a, b, c) {
+//   document.write(`<div>`)
+//   for (let i = 0; i < arguments.length; i++) {
+//     typeof arguments[i] === 'string'
+//     ? (us = arguments[i])
+//     : typeof arguments[i] === 'number'
+//     ? (ag = arguments[i])
+//     : typeof arguments[i] === 'boolean' && arguments[i] === true
+//     ? (statue = 'Available')
+//     : (statue = 'Not Available')
+//   }
+//   document.write(`<h3>Hello " ${us} ", Your Age Is [ ${ag} ], You Are ${statue} To Hire</h3>`,)
+//   document.write(`</div>`)
+// }
+
+// showDetails(50, 'Ehab', true) // Hello " Ehab ", Your Age Is [ 50 ], You Are Available For Hire
+// showDetails(true, 47, 'Hisham') // Hello " Hisham ", Your Age Is [ 47 ], You Are Available For Hire
+// showDetails('Tamer', 43, true) // Hello " Tamer ", Your Age Is [ 43 ], You Are Available For Hire
+// showDetails(false, 'Mo3taz', 36) // Hello " Mo3taz ", Your Age Is [ 36 ], You Are Not Available For Hire
+
+
+// ***************************************************************************************
+// **********          # 64 Anonymous Function And Practice     *******
+/*
+Function
+- Anonymous Function
+- Calling Named Function vs Anonymous Function
+- Argument To Other Function
+- Task Without Namw
+- SetTimeout
+*/
+
+// function calc (num1, num2, num3){
+//   return num1 + num2 + num3;
+// }
+// console.log(calc(10, 20, 30));
+
+
+
+// ***************************************************************************************
+// **********          # 65 Return Nastrd Function     *******
+/*
+Function
+- Function Inside Function
+- Return Function
+*/
+// Examlpe 1
+// function sayMassage (fName, lName) {
+//   let massage = 'Hello';
+// Nasted Function ********************************
+//   function concatMsg (){
+//     massage = `${massage} ${fName} ${lName}`;
+//   }
+//   concatMsg();
+//   return massage;
+// }
+// console.log(sayMassage("Tamer", "Elhashmi"));
+
+
+// Examlpe 2
+// function sayMassage (fName, lName) {
+//   let massage = 'Hello';
+// // Nasted Function ********************************
+//   function concatMsg (){
+//     return `${massage} ${fName} ${lName}`;
+//   }
+//   return concatMsg();
+// }
+// console.log(sayMassage("Tamer", "Elhashmi"));
+
+
+// // Examlpe 3
+// function sayMassage (fName, lName) {
+//   let massage = 'Hello';
+//   // Nasted Function ********************************
+//   function concatMsg (){
+//     function getFullname (){
+//       return `${fName} ${lName}`
+//     }
+//     return `${massage} ${getFullname()} `;
+//   }
+//   return concatMsg();
+// }
+// console.log(sayMassage("Tamer", "Elhashmi"));
+
+
+
+// ***************************************************************************************
+// **********          # 65 Arrow Function Sentax    *******
+
+/*
+Function
+- Arrow Function
+-- Regular vs Arrow [Param + No Param]
+-- Multiple Lines
+*/
+
+// function print(){
+//   return 10;
+// }
+// console.log(print());
+
+// ***************************** OR
+
+// let print = function (){
+//   return 10;
+// }
+// console.log(print());
+
+
+// ***************************** Use Regular Function if we have Multiable Statement .
+// let print = function (){
+  //   return 10;
+  // };
+  
+  // ***************************** Use Arrow Function if we have one Statement Using ().
+  // let print =  () => 10;
+  
+  // console.log(print());
+  // ***************************** Use Arrow Function if we have one Statement Using _.
+
+  // let print = function (num){
+  //   return num;
+  // };
+
+  // console.log(print(100, 50));
+
+  // ********************* OR
+  
+  // ********************* Thin using Arrow function if you have One Parameters without ()
+  // let print = num => num; 
+  
+  // console.log(print(100, 50));
+
+  // ********************* Thin using regular function if you have multiable Parameters 
+  
+  // let print = function (num1, num2){
+    //   return num1 + num2;
+    // };
+    // console.log(print(100, 50));
+
+  // ********************* OR You can using Arrow function if you have Multiable Parameters You Must Using (Parameters)
+  
+  // let print =  (num1, num2) => num1 + num2;
+  
+  // console.log(print(100, 50));
+
+// *************************** # 67 Scope Global and Local Scope
+
+// Using Globle variables
+// var a = 1;
+// let b = 2;
+// function showText (){
+//   // Using local variables
+//   var a = 10;
+//   let b = 20;
+//   console.log(`Function - From local ${a}`);
+//   console.log(`Function - From local ${b}`);
+// }
+
+// console.log(`From Globle ${a}`);
+// console.log(`From Globle ${b}`);
+
+// showText();
+
+// *************************** # 67 Scope Block
+// Block Scope
+// Before ES6 (2015), JavaScript had only Global Scope and Function Scope.
+
+// ES6 introduced two important new JavaScript keywords: let and const.
+
+// These two keywords provide Block Scope in JavaScript.
+
+// Variables declared inside a { } block cannot be accessed from outside the block:
+
+// Example
+// {
+//   let x = 2;
+// }
+// // x can NOT be used here
+
+// ****************************************
+
+// Variables declared with the var keyword can NOT have block scope.
+
+// Variables declared inside a { } block can be accessed from outside the block.
+
+// Example
+// {
+//   var x = 2;
+// }
+// // x CAN be used here
+
+// ****************************************
+
+// Local Scope
+// Variables declared within a JavaScript function, become LOCAL to the function.
+
+// Example
+// // code here can NOT use carName
+
+// function myFunction() {
+//   let carName = "Volvo";
+//   // code here CAN use carName
+// }
+
+// // code here can NOT use carName
+
+// Local variables have Function Scope:
+
+// They can only be accessed from within the function.
+
+// ****************************************
+
+// A variable declared outside a function, becomes GLOBAL.
+
+// Example
+// let carName = "Volvo";
+// // code here can use carName
+
+// function myFunction() {
+// // code here can also use carName
+// }
+
+// ****************************************
+
+// Using Globle variables
+// var a = 1;
+// let b = 2;
+// function showText (){
+//   // Using local variables
+//   var a = 10;
+//   let b = 20;
+//   console.log(`Function - From local ${a}`);
+//   console.log(`Function - From local ${b}`);
+// }
+
+// console.log(`From Globle ${a}`);
+// console.log(`From Globle ${b}`);
+
+// showText();
+
+// ****************************************
+
+// A global variable has Global Scope:
+
+// All scripts and functions on a web page can access it. 
+
+// JavaScript Variables
+// In JavaScript, objects and functions are also variables.
+
+// Scope determines the accessibility of variables, objects, and functions from different parts of the code.
+
+// ****************************************
+
+// Automatically Global
+// If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.
+
+// This code example will declare a global variable carName, even if the value is assigned inside a function.
+
+// Example
+// myFunction();
+
+// // code here can use carName
+
+// function myFunction() {
+//   carName = "Volvo";
+// }
+
+// ************************* Challenge 70 
+
+let names = function () {
+  let data = ""
+  return `String [${data}], => Done`;
+};
+console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+
+
+
+
+01012252253
+0105019009
