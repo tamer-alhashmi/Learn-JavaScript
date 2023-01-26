@@ -1093,11 +1093,11 @@ Loop
 // ***************************************************************************************
 // ********************************          # 56 Loop Challenge       ******************
 
-// let myAdmins = ["Ahmed", "Osama", "Sayed", "rehab", "Stop", "Samera"];
+// let myAdmins = ["Ahmed", "Osama", "Sayed", "Rehab", "Stop", "Samera"];
 // let myEmployees = ["Amgad", "Samah", "Ameer", "Omar", "Ragab", "Rawda", "Othman", "Amany", "Samia", "Rami", "Aaseer", "Onel", "Sedan"];
 // let counter=0;
 
-// ************ First Ansower
+// // ************ First Ansower
 // adminLoop: for (let i=0; i < myAdmins.length; i++){
 // if (myAdmins[i] === "Stop"){break adminLoop;}
 //     document.write(`<h2 class="p-10 bord-b-eee c-blue txt-shad w-fit d-flex ">Team [${i+1}] Admin is "${myAdmins[i]}"</h2>`);
@@ -1463,7 +1463,7 @@ Function
   
   // console.log(print(100, 50));
 
-// *************************** # 67 Scope Global and Local Scope
+// *************************** # 67 Scope Global and Local Scope *************************************
 
 // Using Globle variables
 // var a = 1;
@@ -1587,14 +1587,904 @@ Function
 
 // ************************* Challenge 70 
 
-let names = function () {
-  let data = ""
-  return `String [${data}], => Done`;
-};
-console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+// let names = function () {
+//   let data = ""
+//   return `String [${data}], => Done`;
+// };
+// console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+
+// ************ 71 - Higher Order Function ******************************
+
+// let myNums = [1, 2, 3, 4, 5, 6];
+// let newArray = [];
+
+// for (i = 0; i <myNums.length; i++){
+//   newArray.push(myNums[i] + myNums[i]);
+// }
+// console.log(newArray);
+// same Idea With Map
+
+// let adSelf = myNums.map(function (element, index, ar){
+//   console.log(`Current element => ${element}`);
+//   console.log(`Current index => ${index}`);
+//   console.log(`Array => ${ar}`);
+//   console.log(`This => ${this}`);
+// // return Element + element;
+// }, 10);
+
+// ******************  Or Use Arrow Function ***********
+// let adSelf = myNums.map((a) => a + a);
+
+
+// let myFriends = ["Tamer", "Ahmed", "Ashraf", "Khaled"];
+// let newFreinds = []
+// for (i = 0; i < myFriends.length; i++){
+//   newFreinds.push(myFriends[i]);
+// };
+// console.log(newFreinds);
+
+// let adSelf = myFriends.map(function(element, index, ar){
+//   console.log(`current element => ${element}`)
+//   console.log(`current index => ${index}`)
+//   console.log(`array => [${ar}]`)
+//   console.log(`This => ${this}`)
+//   return element
+// }, 20);
+// let adSelf = myFriends.map((a) => a);
+// console.log(adSelf);
+
+// ************ 71 - Higher Order Function Map Practice ******************************
+
+/*
+Map
+- Use Ternary Condetional Operator (use If Shorthand) ************** VII
+- Swap Cases
+- Inverted Numbers
+- Ignore Boolean Vlue
+*/
+
+// let swappingCases = "eLZERo"; // ElzerO
+// let invertedNumbers = [1, -10, -20, 100, -30]; // (5) [-1, 10, 20, -100, 30]
+// let ignoreNumbers = "Elz123er4o";
+
+// let sw = swappingCases
+//   .split("")
+//   .map(function (ele) {
+//     return ele === ele.toUpperCase()
+//       ? ele.toLowerCase()
+//       : ele.toUpperCase();
+//   })
+//   .join("");
+// console.log(sw);
+
+// let sw = swappingCases.split("").map(function (ele){
+//   return ele === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase(); 
+// }).join("");
+// console.log(sw);
+
+// let inv = invertedNumbers
+// .map(function(ele){
+//   return -ele;
+// });
+// console.log(inv);
+
+// let ign = ignoreNumbers
+// .split("")
+// .map(function(ele){
+//   return isNaN(parseInt(ele)) ?  ele: "";
+// }).join("");
+// console.log(ign);
+
+
+// ************ 73 - Higher Order Function Filter ******************************
+
+// let friends = ["Ahmed", "Sameh", "Sayed",  "Ashraf", "Amgad", "Israa"];
+// let numbers = [11, 20, 5, 17, 10, 50, 75, 100, 99];
+
+// let fr = friends.filter(function(el){
+//   return el.startsWith("A");
+// })
+// console.log(fr);
+
+// let nu = numbers.filter(function(el){
+//   return el % 2 ===0;
+// })
+// console.log(nu)
+
+// let fr = friends.filter(function(el){
+//   return el.startsWith("A") ;
+// })
+// console.log(fr);
+
+// let nu = numbers.filter(function(el){
+//   return el % 2 === 0;
+// })
+// console.log(nu)
+
+// ************ 74 - Higher Order Function Filter Practice ******************************
+
+// let mix = "A13BS2ZX"; // 194 " Return just (number * itself)"
+
+// let newMix = mix
+// .split("")
+// .filter(function(ele){
+//   return !isNaN(parseInt(ele));
+// })
+// .map(function(ele){
+//   return ele * ele;
+// })
+// .join("");
+// console.log(newMix)
+
+// ************ 75 - Higher Order Function Reduce ******************************
+
+// let nums = [10, 20, 15, 30];
+// let nums = [10, 20, 15, 10, 15];
+
+// let add = nums.reduce(function(acc, current, index, arr){
+//   console.log(`acc => ${acc}`);
+//   console.log(`current => ${current}`);
+//   console.log(`index => ${index}`);
+//   console.log(`array => ${arr}`);
+//   console.log(acc + current);
+//   console.log(`#################`);
+//   return acc + current;
+// }, 5)
+// console.log(add);
+
+// ************ 76 - Higher Order Function Reduce Practice ******************************
+
+// let theBiggest = ["Bla", "Bropaganda", "Tamer", "Ahmed", "Ali", "Alexan", "Sara", "Salim"];
+
+// let big = theBiggest.reduce(function(acc, current){
+//   return acc.length > current.length ? acc : current; 
+// })
+// console.log(big)
+
+// let removeChars = ["E", "@", "@", "L", "Z", "@", "@", "E", "R", "@", "O"];
+
+// let big =theBiggest
+// .reduce(function(acc, current){
+//   return acc.length > current.length ?  acc : current;  
+// });
+// console.log(big);
+
+// let rem = removeChars.filter(function(ele){
+//   return !ele.startsWith("@");
+// })
+// // 
+// .reduce(function(acc, current){
+//   return acc + current;
+// });
+// console.log(rem);
+
+// ************ 77 - Higher Order Function ForEach Practice ****************
+
+// After Creating A UL and 3 DIV In HTML File
+
+// let allLis = document.querySelectorAll("ul li");
+// let allDivs = document.querySelectorAll(".info div");
+
+// allLis.forEach(function(ele){
+//   ele.onclick = function (){
+//     // Remove Active Class Form All Elements
+//     allLis.forEach(function (ele) {
+//       ele.classList.remove("active");
+//     });
+//     // Add Active Class To All Elements
+//     this.classList.add("active");
+//     //Hide All Divs
+//     allDivs.forEach(function(ele){
+//       ele.style.display = "none"
+//     });
+//   };
+// });
+
+//************** 78 Challenge  ****************
+
+// let myString = "EElllzzzzzzzzzzzzeroo";
+// console.log(myString.split(""))
+// let room = []
+// room = myString.split("").filter(function(ele, i){
+//   console.log(myString.indexOf(ele)) 
+//   console.log(myString.indexOf(ele) === i);
+//   return myString.indexOf(ele)===i;
+// });
+// console.log (room)
 
 
 
 
-01012252253
-0105019009
+// let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+
+// let solution = myString.split("").filter(function(ele, i){
+//   return ele !== (",") && isNaN(parseInt(ele))
+// })
+// .map(function(ele){
+//   return ele === ("_") ? " " : ele
+// })
+// solution.shift();
+// solution.pop();
+// console.log(solution.join(""))
+
+// ***************** 79 Object *********************
+/*
+Object
+- Intro and wat is object
+- Testing window Object
+- Accessing Object
+*/
+
+// let user = {
+//   //Properties
+//   theName: "Tamer",
+//   theAge : 42,
+//   //Methods
+//   sayHello : function(){
+//     return `Hello`
+//   }
+// }
+// console.log(user.theName);
+// console.log(user.theAge);
+// console.log(user.sayHello());
+
+
+// ***************** 80 Dot Notation vs Bracket Notation *********************
+
+// let user = {
+//   theName: "Tamer",
+//   country: "Egypt"
+// }
+// console.log(user.theName); // Tamer
+// console.log(user["theName"]); // Tamer
+// console.log(user.country); //Egypt
+// console.log(user["country"]); //Egypt
+
+
+// let myVar = "country"; // Dainamic Properties
+// let user = {
+//   theName: "Tamer",
+//   country: "Egypt"
+// };
+// console.log(user.theName); // Tamer    Dot Notation to call Properties
+// console.log(user.country); // Egypt    Dot Notation to call Properties
+// console.log(user.myVar); // undefined  Dot Notation to call Dainamic Properties
+// console.log(user[myVar]); // Egypt  Bracket Notation to call Dainamic Properties without dot
+
+// ***************** 81 Nested Object and advanced example  *********************
+
+// let user = {
+//   theName: "Tamer",
+//   age: 42,
+//   skills: ["HTML", "CSS", "JS"],
+//   statUs: false,
+//   addresses: {
+//     ksa: "Riyadh",
+//     egypt : {
+//       one: "Cairo",
+//       tow: "Alex",
+//     },
+//   },
+//   checkSt: function() {
+//     if (user.statUs === true) {
+//       return "Available";
+//     }else {
+//       return "Not Available";
+//     }
+//   }
+// }
+// console.log(user.theName); // Tamer
+// console.log(user.age); // 42
+// console.log(user.skills); // (3) ['HTML', 'CSS', 'JS']  --> (Array)
+// console.log(user.skills.join(" | ")); // HTML | CSS | JS --> (String + join " | ")
+// console.log(user.skills[2]); //  JS 
+// console.log(user.skills[2].toLowerCase()); //  js 
+// console.log(user.addresses); //  {ksa: 'Riyadh', egypt: {…}} 
+// console.log(user.addresses.ksa); //  Riyadh
+// console.log(user.addresses.egypt.one); //  Cairo
+// console.log(user.addresses.egypt.tow); //  Alex
+// console.log(user["addresses"].egypt.tow); //  Alex
+// console.log(user["addresses"]["egypt"]); //  {one: 'Cairo', tow: 'Alex'}
+// console.log(user["addresses"]["egypt"]["one"]); //  Cairo
+// console.log(user.checkSt()); // Not Available
+
+// ***************** 82 Creat Object with new keyword  *********************
+
+// let user = new Object();
+// console.log(user);
+
+// user.age = 38;
+
+// user["country"] = "Egypt";
+
+// user.sayHello = function() {
+//   return `Hello`;
+// };
+// console.log(user)
+// console.log(user.age)
+// console.log(user.country)
+// console.log(user.sayHello())
+
+
+// ***************** 83 This Keyword  *********************
+
+// console.log(this); // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+// console.log(this === window); // true
+// myVar = 100;
+// console.log(window.myVar); // 100
+// console.log(this.myVar); // 100
+// function sayHello(){
+//   console.log(this)
+//   return this;
+// }
+// sayHello();// Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+// console.log(sayHello() === window); // true
+
+// let user = {
+//   age: 42,
+//   ageIndays: function(){
+//     return user.age * 365; 
+//     //   *************** Or Using (This)
+//     // return this.age * 365;
+//   },
+// };
+// console.log(user.age); // 42
+// console.log(user.ageIndays()); // 15330
+
+// ***************** 84 Create Object with Create Method  *********************
+// Creating Globale Object with [this] return
+// let user = {
+//   name: ("tamer"),
+//   age: 40,
+//   doubleAge: function(){
+//     return this.age * 2;
+//   },
+// };
+// console.log(user); // {age: 40, doubleAge: ƒ}                 -----> Object
+// console.log(user.name); // 40                                  -----> Property
+// console.log(user.age); // 40                                  -----> Property
+// console.log(user.doubleAge()); // 80                          -----> Method
+
+// // Creating self object
+// let obj = Object.create({});
+// obj.a = 100;
+// console.log(obj);
+// // Creating Object with same prototype with Globale Object "user"
+// let copyObj = Object.create(user);
+// copyObj.age = 50;
+// // console.log(copyObj); // {}                                      -----> Object
+// console.log(copyObj.name); // tamer                                 -----> Property
+// console.log(copyObj.age); // 50                                  -----> Property
+// console.log(copyObj.doubleAge()); // 100                          -----> Method
+
+// ***************** 85 Create Object with Assign Method  *********************
+
+// let target1 = {
+//   tar1: "Ashraf",
+//   tar2: 24,
+// }
+// let farget1 = {
+//   far1: "Tamer",
+//   far2: 24,
+// }
+
+// let targetObj = {
+//   prop1: 100,
+//   prop2: 50,
+// };
+
+// let finalObj = Object.assign({}, target1, {beso: "Saly", beso2: 20});
+// console.log(finalObj);
+
+// let finalObj2 = Object.assign(function (){
+//   return target1;
+// });
+// console.log(finalObj2());
+
+// ********************** 86 DOM "Document Object Model" ****************************
+/*
+DOM
+- What is DOM
+- DOM Selectors
+---Find Element By ID
+---Find Element By Tag Name
+---Find Element By Class Name
+---Find Element By CSS Selectors
+---Find Element By Collection
+-------title
+-------body
+-------images
+-------forms
+-------links
+*/
+// let myidElement = document.getElementById("my-div");
+// let mytagElement = document.getElementsByTagName("p");
+// let myclassElement = document.getElementsByClassName("my-span");
+// let queryClassElement = document.querySelector(".spacial");
+// let queryIdElement = document.querySelector(".my-span");
+// let queryallElement = document.querySelectorAll(".my-span");
+
+
+// console.log(myidElement);
+// console.log(mytagElement[1]);
+// console.log(myclassElement);
+// console.log(queryClassElement);
+// console.log(queryIdElement);
+// console.log(queryallElement);
+
+// console.log(document.title);
+// console.log(document.body);
+// console.log(document.forms[1]);
+// console.log(document.links[0].href);
+
+// ********************** 87 Get Set Element Content and Attributes" ****************************
+/*
+DOM [Get / Set Element content and attributes]
+- innerHTML
+- textContent
+- Change Attributes Directly
+- Change Attributes with methods
+---getAttribute
+---setAttribute
+
+Search
+- innerText
+*/
+
+// let myElement = document.querySelector(".js");// ************GET
+// console.log(myElement.innerHTML);
+// console.log(myElement.textContent);
+// myElement.innerHTML = "Text from <span>Main.js</span> File";
+// myElement.textContent = "Text from <span>Main.js</span> File";
+
+// // **************************- Change Attributes Directly
+// console.log(document.links[0]);
+// document.links[0].href = "https://elhashmy-luxury.com";
+// document.links[0].textContent = "Elhashmy";
+
+// document.images[0].src =
+//   "https://i0.wp.com/elhashmy-luxury.com/wp-content/uploads/2023/01/thump-1-1.webp?w=600&ssl=1";
+// document.images[0].alt = "Alternate";
+// document.images[0].title = "Photo";
+// document.images[0].id = "pic";
+// document.images[0].className = "img";
+
+// // ---getAttribute
+// // ---setAttribute
+// let myLink = document.querySelector(".link")
+// myLink.setAttribute("href", "https://elhahsmy-luxury32.com")
+// myLink.setAttribute("title", "Elhashmy-Blog")
+
+
+// Practice
+// let myidElement = document.getElementById("my-div");
+// let mytagElement = document.getElementsByTagName("p");
+// let myclassElement = document.getElementsByClassName("my-span");
+// let queryClassElement = document.querySelector(".spacial");
+// let queryIdElement = document.querySelector(".my-span");
+// let queryallElement = document.querySelectorAll(".my-span");
+
+// let para = document.getElementsByTagName("p");
+// console.log(para[0])
+// para[0].innerHTML = "Hello Paragraph Form <span>innerHTML</span>";
+// para[1].textContent = "Hello Paragraph Form <span>TextContent</span>";
+// para[1].textContent = "Elhashmy Blog Paragraph";
+
+// let myIdiv = document.getElementsByClassName("my-span");
+// console.log(myIdiv[1]);
+// myIdiv[1].textContent = "Fainal Editing"; // <span class="my-span spacial">Fainal Editing</span>
+
+// // para[0].className = "para-style"
+// para[0].className = "para-style"; // <p class="para-style">
+// para[1].className = "tito-para mnos therd"; // <p class="tito-para mnos therd">Elhashmy Blog Paragraph</p>
+
+// let forma = document.forms;
+// forma[0].name = "tamer";// <form action name="tamer"></form>
+    
+
+let btnStyle =
+  "cursor: pointer; color: white; text-decoration: none; font-weight: normal; background-color: #0077ff; padding: 10px;  border-radius: 6px; display: block; width: 150px; border: 2px solid black; margin: 10px; font-family: cursive; ";
+
+// let navSideBar = "padding: 10px; color: white; background-color: blue;";
+
+// let linka = document.querySelector(".link");
+
+// console.log(linka);
+
+// linka.title = "linka-style";
+// linka.textContent = "linka-style";
+// linka.href = "https://linka-style.com";// <a href="https://linka-style.com/" class="linka-style" title="linka-style">linka-style</a>
+// linka.username = "Bor333y"; // <a href="https://Bor333y@linka-style.com/" class="linka-style" title="linka-style">linka-style</a>
+// linka.type = "text";
+// linka.target = "blank";
+// linka.style = btnStyle;
+
+
+//********************** 88 - Check Attributes And Examples
+
+/*
+DOM [Check Attributes]
+- Element.attributes
+- Element.hasAttribute
+- Element.hasAttributes
+- Element.removeAttribute
+*/
+
+// console.log(document.getElementsByTagName("p")[0].attributes);
+
+// let myP = document.getElementsByTagName("p")[0];
+// if (myP.hasAttribute("data-src")){
+//   //To Remove attributes
+//   myP.removeAttribute("data-src")
+//   console.log("Found and removed");
+// }else {
+//   console.log("Not Found"); ;
+// }
+
+
+// let newEle = document.createElement("p");
+// newEle.title = "newParagraph";
+// newEle.alt = "newParagraph";
+// newEle.textContent = "newParagraph";
+// newEle.className = "newParagraph";
+// newEle.innerHTML = "newParagraph222";
+// console.log(newEle);
+
+//********************** 89 - Creat and append element
+// Classes
+// let myElement = document.createElement("div");
+// let myAttr = document.createAttribute("data-custom");
+// let myText = document.createTextNode("Product One");
+// let myComment = document.createComment("This is Div")
+// let myH2 = document.createElement("h2");
+
+// myElement.className = "h2Sty";
+// myElement.setAttributeNode(myAttr);
+// myElement.setAttribute("data-test", "Testing");
+
+// // Append Comment To Element
+// myElement.appendChild(myComment);
+
+// // Append Text To Element
+// myElement.appendChild(myText);
+// document.body.appendChild(myElement);
+
+//********************** 90 Product with title and description Practice */
+
+// let mymainElement = document.createElement("div");
+// let myHeading = document.createElement("h2");
+// let myParagraph = document.createElement("p");
+
+// let headingText = document.createTextNode("Product Text")
+// let paraText = document.createTextNode("paragraph Text")
+
+// mymainElement.className = ("proStyle");
+// mymainElement.appendChild(myHeading);
+// myHeading.appendChild(headingText);
+
+// mymainElement.appendChild(myParagraph);
+// myParagraph.appendChild(paraText);
+
+// document.body.appendChild(mymainElement);
+
+// for (let i = 0; i < mymainElement.length; i++){
+//   mymainElement[i].className = "proStyle";
+//   mymainElement[i].appendChild(myHeading);
+//   myHeading.appendChild(headingText);
+
+//   mymainElement[i].appendChild(myParagraph);
+//   myParagraph.appendChild(paraText);
+
+// }
+// document.body.appendChild(mymainElement);
+
+// ************************** 91 Deal with childs
+/*
+DOM [ Deal with childs]
+- children
+- childNodes
+- first child 
+- last child
+-first element child
+- last element child
+*/
+
+// let myElement = document.querySelector("div");
+
+// console.log(myElement);
+// console.log(myElement.children);
+// console.log(myElement.children[0]);
+// console.log(myElement.childNodes);
+// console.log(myElement.childNodes[0]);
+
+// console.log|(myElement.firstChild);
+// console.log|(myElement.lastChild);
+
+//********************************* 92 DOM Events ******************************* */
+
+/*
+Use Events on JS
+--- onclick
+--- oncontextmenu
+--- onmouseenter
+--- onmouseleave
+
+--- onload
+--- onscroll
+--- onresize
+--- onfocus
+--- onblur
+--- ononsubmit
+*/
+
+
+// let myBtn = document.getElementById("btn");
+// myBtn.onclick = function (){
+//   console.log("Clicked");
+// }
+
+//********************************* 93 Validate Form And Prevent Default ******************************* */
+
+/*
+DOM [Events]
+- Validate Form Practice
+- Prevent Default
+*/
+
+// let userInput = document.querySelector("[name='username']")
+// let ageInput = document.querySelector("[name='age']")
+
+// document.forms[0].onsubmit = function(formValid) {
+//   let userValid = false
+//   let ageValid = false
+
+//   if (userInput.value !== "" && userInput.value.length <= 10 ) {
+//     userValid = true
+//   }
+//   if (ageInput.value !== "" ){
+//     ageValid = true
+//   }
+//   if (userValid === false || ageValid === false){
+//     formValid.preventDefault();
+//   }
+// }
+
+// لأختيار الحقول المراد التعامل معها 
+
+// let userInput = document.querySelector("[name = 'username']")
+// let ageInput = document.querySelector("[name = 'age']")
+
+// document.forms[0].onsubmit = function (eve){
+//   let userValid = false
+//   let ageValid = false
+
+//   if (userInput.value !== "" && userInput.value.length <= 10){
+//     userValid = true
+//   }
+
+//   if (ageInput !== ""){
+//     ageValid = true
+//   }
+
+//   if ( userValid === false || ageValid === false){
+//     eve.preventDefault();
+//   }
+// }
+
+// document.links[0].onclick = function(Nothing){
+//   Nothing.preventDefault();
+// }
+
+// document.links[0].onmouseenter = function (event) {
+//   console.log(event);
+// }
+
+
+// document.links[0].onclick = function (event) {
+//   console.log(event);
+//   event.preventDefault();
+// };
+
+// ************************** 94 Event Semulation - Click Focus Blur **********************************
+
+// let one = document.querySelector(".one");
+// let tow = document.querySelector(".tow");
+
+// window.onload = function (){
+//   tow.focus();
+// }
+
+// one.onblur = function (){
+//   document.links[0].click();
+// }
+
+// ************************** 95 Class List Object and Methods **************** VII ******************
+
+/*
+DOM [Class list]
+- classes list
+--- length
+--- contains
+--- item (index)
+--- add
+--- remove
+--- toggle
+*/
+
+// let element = document.getElementById("my-div");
+
+// console.log(element.classList);
+// console.log(typeof element.classList);
+// console.log(element.classList.contains("Tamer"));
+// console.log(element.classList.contains("test"));
+// console.log(element.classList.item("3"));
+
+// element.onclick = function(){
+//   element.classList.add("add-one", "add-tow");// لأضافة كلاس للعنصر عند الضغط علية
+// }
+
+// element.onclick = function(){
+//   element.classList.remove("one"); // حذف كلاسس من العنصر عند الضغط عليه
+// }
+
+// element.onclick = function(){
+//   element.classList.toggle("one-js"); // إضافة كلاس إن لم يكن موجود && وحذفه إن كان موجود 
+// }
+
+// *********************************** 96 CSS Styling and Stylesheets ***********************************
+
+/*
+DOM [CSS]
+- style
+- cssText
+- removeProperty(PropertyName)[Inline Stylesheet]
+- setProperty(propertyName, value, priority)
+*/
+
+// let element = document.getElementById("my-div");
+// To Add Inline Style
+// element.style.color = "red";
+// element.style.fontWeight = "bold";
+// Or
+// element.style.cssText = "font-weight: bold; color: #3794fe; opacity: 0.9";
+
+// element.style.removeProperty("color");
+// element.style.setProperty("background-color", "#1e1e1e", "important");
+
+// document.styleSheets[0].rules[0].style.setProperty("border-bottom", "5px solid #3794fe", "important");
+// document.styleSheets[0].rules[0].style.removeProperty("border-bottom", "important");
+// document.styleSheets[0].rules[0].style.removeProperty("line-height", "important");
+
+
+//************************* 97 Before, After, Prepend, Append, Remove */
+/*
+DOM [Deal with element]
+- before [Element || String] قبل العنصر
+- after [Element || String] بعد العنصر
+- append [Element || String] داخل العنصر في النهاية
+- prepend [Element || String]  داخل العنصر في البداية
+- remove
+*/
+// Decleretion Zone Start
+
+// --- Dec Style 
+
+// let h2ddiNg = "color: #0875cf; background-color: #1e1e1e; width: fit-content; padding: 20px; font-size: 30px; font-weight: bold; border-bottom: 5px solid #3794fe; border-radius: 3px;";
+
+// // --- Dec Element 
+// let element = document.getElementById("my-div");
+
+
+// let createdP = document.createElement("p");
+// createdP.textContent = "Paragraph - After"
+
+// let creatHd = document.createElement("h2");
+// creatHd.textContent = "Heading h2 - Befor";
+// creatHd.style.cssText = h2ddiNg;
+
+// let dscRp = document.createElement("p");
+// dscRp.textContent = "Hello From Describtion, It's easy to say i'm ok, But hard to feel it";
+
+// let adrsData = document.createElement("address");
+// adrsData.textContent = ("Arab Republic Of Egypt, Alexandria, Enu45-30");
+
+// // Decleretion Zone End
+
+// element.before(creatHd);
+// document.styleSheets[1].rules[0].style.removeProperty("line-height");
+// console.log(document.styleSheets)
+
+// element.after(createdP);
+
+// createdP.after(adrsData);
+
+// createdP.prepend(dscRp);
+
+// let card = documenet.createElement("div");
+// // element.after(card);
+// card.textContent = "Hello Card"
+
+
+
+
+// dscRp.before(creatHd);
+
+// element.before("Hello Before Div");
+// element.after("Hello After Div");
+
+// element.before(createdP);
+
+// element.append(" - Hello Append")
+// element.prepend(" - Hello prepend - ")
+
+//** 98 DOM Traversing */
+/*
+DOM [Traversing]
+-nextSibling
+-previousSibling
+-nextElementSibling
+-previousElementSibling
+parentElement
+*/
+
+
+// let span = document.querySelector(".tow");
+
+// console.log(span.nextSibling);
+// console.log(span.nextElementSibling);
+
+
+// ***************************************  99 DOM [ Cloning]
+/*
+ 99 DOM [ Cloning]
+ - cloneNode(Deep)
+*/
+
+let tesTfun = function (){
+let oneSort = document.getElementsByTagName("span")[2];
+let towSort = document.getElementsByTagName("span")[0];
+let threeSort = document.getElementsByTagName("p")[0];
+let fourSort = document.getElementsByTagName("div")[0];
+let fiveSort = document.getElementsByTagName("span")[1];
+
+threeSort.before(oneSort);
+oneSort.after(towSort);
+towSort.after(threeSort);
+fourSort.prepend(fiveSort);
+fiveSort.append(threeSort);
+threeSort.after(towSort);
+towSort.after(oneSort);
+
+oneSort.style.display = "block;";
+
+let copYp = document.querySelector("p").cloneNode(true);
+fourSort.appendChild(copYp);
+copYp.id = "copy-p";
+copYp.style.cssText =
+  "color: #3794fe; font-size: 40px; background-color: #1c1c1c; text-align: center; transition: 0.5s;";
+fourSort.style.cssText =
+  "background-color: #2c3c4c; color: white; text-align: center; transition: 0.5s;";
+threeSort.style.cssText =
+  "background-color: #1f2f3f; color: white; text-align: center; transition: 0.5s;";
+oneSort.style.cssText =
+  "background-color: #1e2e3e; color: white; text-align: center; transition: 0.5s;";
+towSort.style.cssText =
+  "dispaly: block; background-color: #1e2e3e; color: white; text-align: center; transition: 0.5s;";
+}
+
+
+// Create Button
+let showBtn = document.createElement("button");
+showBtn.innerHTML = "Show Style";
+document.body.prepend(showBtn);
+showBtn.style.cssText = btnStyle;
+
+
+let backBtn = document.createElement("button");
+backBtn.innerHTML = "Go Back";
+showBtn.after(backBtn);
+backBtn.style.cssText = btnStyle;
+
+showBtn.onclick = tesTfun;
+
+// 100 addEventListener
