@@ -2082,8 +2082,8 @@ Search
 // forma[0].name = "tamer";// <form action name="tamer"></form>
     
 
-let btnStyle =
-  "cursor: pointer; color: white; text-decoration: none; font-weight: normal; background-color: #0077ff; padding: 10px;  border-radius: 6px; display: block; width: 150px; border: 2px solid black; margin: 10px; font-family: cursive; ";
+// let btnStyle =
+//   "cursor: pointer; color: white; text-decoration: none; font-weight: normal; background-color: #0077ff; padding: 10px;  border-radius: 6px; display: block; width: 150px; border: 2px solid black; margin: 10px; font-family: cursive; ";
 
 // let navSideBar = "padding: 10px; color: white; background-color: blue;";
 
@@ -2440,51 +2440,282 @@ parentElement
  - cloneNode(Deep)
 */
 
-let tesTfun = function (){
-let oneSort = document.getElementsByTagName("span")[2];
-let towSort = document.getElementsByTagName("span")[0];
-let threeSort = document.getElementsByTagName("p")[0];
-let fourSort = document.getElementsByTagName("div")[0];
-let fiveSort = document.getElementsByTagName("span")[1];
+// let oneSort = document.getElementsByTagName("span")[2];
+// let towSort = document.getElementsByTagName("span")[0];
+// let threeSort = document.getElementsByTagName("p")[0];
+// let fourSort = document.getElementsByTagName("div")[0];
+// let fiveSort = document.getElementsByTagName("span")[1];
 
-threeSort.before(oneSort);
-oneSort.after(towSort);
-towSort.after(threeSort);
-fourSort.prepend(fiveSort);
-fiveSort.append(threeSort);
-threeSort.after(towSort);
-towSort.after(oneSort);
+// // let copYp = document.querySelector("p").cloneNode(true);
+// // fourSort.appendChild(copYp);
+// // copYp.id = "copy-p";
+// // copYp.style.cssText =
+// //   "color: #3794fe; font-size: 40px; background-color: #1c1c1c; text-align: center; transition: 0.5s;";
 
-oneSort.style.display = "block;";
+// // Create Button
+// let showBtn = document.createElement("button");
+// showBtn.innerHTML = "Show Style";
+// document.body.prepend(showBtn);
+// showBtn.style.cssText = btnStyle;
 
-let copYp = document.querySelector("p").cloneNode(true);
-fourSort.appendChild(copYp);
-copYp.id = "copy-p";
-copYp.style.cssText =
-  "color: #3794fe; font-size: 40px; background-color: #1c1c1c; text-align: center; transition: 0.5s;";
-fourSort.style.cssText =
-  "background-color: #2c3c4c; color: white; text-align: center; transition: 0.5s;";
-threeSort.style.cssText =
-  "background-color: #1f2f3f; color: white; text-align: center; transition: 0.5s;";
-oneSort.style.cssText =
-  "background-color: #1e2e3e; color: white; text-align: center; transition: 0.5s;";
-towSort.style.cssText =
-  "dispaly: block; background-color: #1e2e3e; color: white; text-align: center; transition: 0.5s;";
-}
+// let backBtn = document.createElement("button");
+// backBtn.innerHTML = "Go Back";
+// showBtn.after(backBtn);
+// backBtn.style.cssText = btnStyle;
 
+// showBtn.onclick = function (){
+//   //Give Element Some Stylesh
+//   oneSort.style.cssText =
+//     "background-color: #6f7f8f; color: white; text-align: center; transition: 0.3s; display: flex; justify-content: center; align-items: center; font-size: 34px; margin: 0; padding: 20px; width: 300px; height:80px;";
+//   towSort.style.cssText =
+//     "background-color: #4c5c6c; color: white; text-align: center; transition: 0.6s; display: flex; justify-content: center; align-items: center; font-size: 34px; margin: 0; padding: 20px; width: 300px; height:80px;";
+//   threeSort.style.cssText =
+//     "background-color: #3f4f5f; color: white; text-align: center; transition: 0.8s; display: flex; justify-content: center; align-items: center; font-size: 34px; margin: 0; padding: 20px; width: 300px; height:80px;";
+//   fourSort.style.cssText =
+//     "background-color: #2d3d4d; color: white; text-align: center; transition: 1s; display: flex; justify-content: center; align-items: center; font-size: 34px; margin: 0; padding: 20px; width: 300px; height:80px;";
+//   fiveSort.style.cssText =
+//     "background-color: #1f2f3f; color: white; text-align: center; transition: 1.2s; display: flex; justify-content: center; align-items: center; font-size: 34px; margin: 0; padding: 20px; width: 300px; height:80px;";
+
+//   fourSort.after(fiveSort);
+//   threeSort.before(towSort);
+//   towSort.before(oneSort);
+//   fourSort.after(fiveSort);
+// };
+
+// // This example adds many events on the document.
+// document.addEventListener("mouseover", myFunction);
+// document.addEventListener("click", mySecondFunction);
+// document.addEventListener("mouseout", myThirdFunction);
+
+// function myFunction() {
+//   fourSort.textContent = "Moused over!";
+// }
+
+// function mySecondFunction() {
+//   fourSort.textContent = "Clicked!";
+// }
+
+// function myThirdFunction() {
+//   fourSort.textContent = "Moused out!";
+// }
+
+
+// **************************** Profile Card ****************************
+let btnStyle =
+  "cursor: pointer; color: white; text-decoration: none; font-weight: normal; background-color: #0077ff; padding: 10px;  border-radius: 6px; display: block; width: 150px; border: 2px solid black; margin: 10px; font-family: cursive; ";
+
+let secTion = document.createElement("div");
+document.body.append(secTion);
+
+let proCard = document.createElement("div")
+secTion.append(proCard)
+proCard.className = "proCard";
+// Profile Photo
+let proPic = document.createElement("img");
+proPic.src = "photos/1627395228537.jpg"
+proCard.append(proPic);
+
+// Info Row Start
+let infoRow = document.createElement("div");
+proCard.append(infoRow);
+
+    let mainName = document.createElement("h4");
+    document.body.append(mainName);
+    mainName.textContent = "Tamer Elhashmy";
+    infoRow.append(mainName)
+    // Info Row End
+
+
+// Job Row Start
+  let jobTitle = document.createElement("span");
+  jobTitle.textContent = "Front-end Developer";
+infoRow.append(jobTitle);
+// Job Row End
+
+// Location Row Start
+let locaRow = document.createElement("div");
+let locaIcon = document.createElement("i")
+locaIcon.innerHTML = `<i class="fa-solid fa-location-dot loca-icon"></i>`;
+let countName = document.createElement("span");
+countName.textContent = "Egypt";
+  let cityName = document.createElement("span");
+cityName.textContent = "Alexandria, ";
+
+infoRow.append(locaRow);
+locaRow.append(locaIcon);
+locaIcon.after(cityName);
+cityName.after(countName);
+// Location Row End
+
+// Numbers Row Start
+let numRow = document.createElement("div");
+locaRow.after(numRow);
+
+  let follDiv = document.createElement("div");
+  follDiv.className = "num-box"
+    let numBer = document.createElement("p");
+      numBer.textContent = "1598";
+    let sociName = document.createElement("p");
+      sociName.textContent = "Followers"
+        follDiv.prepend(numBer);
+        follDiv.append(sociName);
+        numRow.append(follDiv);
+
+let follDiv2 = document.createElement("div");
+follDiv2.className = "num-box"
+  let numBer2 = document.createElement("p");
+  numBer2.textContent = "65";
+  let sociName2 = document.createElement("p");
+  sociName2.textContent = "Following";
+  follDiv2.prepend(numBer2);
+  follDiv2.append(sociName2);
+follDiv.after(follDiv2);
+
+let follDiv3 = document.createElement("div");
+follDiv3.className = "num-box"
+  let numBer3 = document.createElement("p");
+  numBer3.textContent = "123";
+  let sociName3 = document.createElement("p");
+  sociName3.textContent = "Articles";
+  follDiv3.prepend(numBer3);
+  follDiv3.append(sociName3);
+  follDiv2.after(follDiv3);
+
+let follDiv4 = document.createElement("div");
+follDiv4.className = "num-box"
+  let numBer4 = document.createElement("p");
+  numBer4.textContent = "85";
+  let sociName4 = document.createElement("p");
+  sociName4.textContent = "Works";
+    follDiv4.prepend(numBer4);
+    follDiv4.append(sociName4);
+    follDiv3.after(follDiv4);
+// Numbers Row End
+
+// Icon Row Start
+let iconRow = document.createElement("div");
+numRow.after(iconRow);
+iconRow.className = "icon-row";
+
+  let linkBtn1 = document.createElement("a")
+  let icon1 = document.createElement("i")
+  icon1.innerHTML = `<i class="fa-brands fa-facebook"></i>`;
+  linkBtn1.append(icon1);
+  iconRow.append(linkBtn1);
+
+  let linkBtn2 = document.createElement("a")
+  let icon2 = document.createElement("i")
+  icon2.innerHTML = `<i class="fa-brands fa-twitter"></i>`;
+    linkBtn2.append(icon2);
+    linkBtn1.after(linkBtn2);
+
+  let linkBtn3 = document.createElement("a")
+  let icon3 = document.createElement("i")
+  icon3.innerHTML = `<i class="fa-brands fa-github"></i>`;
+    linkBtn3.append(icon3);
+    linkBtn2.after(linkBtn3);
+
+  let linkBtn4 = document.createElement("a")
+  let icon4 = document.createElement("i")
+  icon4.innerHTML = `<i class="fa-brands fa-linkedin"></i>`;
+    linkBtn4.append(icon4);
+    linkBtn3.after(linkBtn4);
+  
+  let linkBtn5 = document.createElement("a")
+  let icon5 = document.createElement("i")
+  icon5.innerHTML = `<i class="fa-brands fa-figma"></i>`;
+    linkBtn5.append(icon5);
+    linkBtn4.after(linkBtn5);
+
+  let linkBtn6 = document.createElement("a")
+  let icon6 = document.createElement("i")
+  icon6.innerHTML = `<i class="fa-brands fa-codepen"></i>`;
+      linkBtn6.append(icon6);
+      linkBtn5.after(linkBtn6);
+// Icon Row End
 
 // Create Button
-let showBtn = document.createElement("button");
-showBtn.innerHTML = "Show Style";
-document.body.prepend(showBtn);
-showBtn.style.cssText = btnStyle;
+let btnRow = document.createElement("div");
+iconRow.after(btnRow)
+btnRow.style.cssText = "display: flex; justify-content: center;";
+
+let mssBtn = document.createElement("button");
+mssBtn.innerHTML = "Massage";
+mssBtn.style.cssText = btnStyle;
+
+let follBtn = document.createElement("button");
+follBtn.innerHTML = "Follow";
+follBtn.style.cssText = btnStyle;
+
+btnRow.prepend(mssBtn);
+btnRow.append(follBtn);
+
+// Style Start
+
+secTion.style.cssText =
+  "background-image: linear-gradient(347deg, #ec2c5d, #7441f5); padding-top: 150px; ";
+proCard.style.cssText =
+  "font-family: Poppins; position: relative; margin: 0 auto; width: 600px; background-color: white; border-radius: 8px; padding: 80px 50px; text-align: center ";
+proPic.style.cssText =
+  "width: 160px; border-radius: 50%; position: absolute; top: -80px; transform: translate(-50%); border: 6px solid #0875cf60";
+mainName.style.cssText =
+  "color: #3794fe; margin: 0; line-height: 1.6; padding-top: 30px; font-size: 24px; letter-spacing: 1px; font-weight: 400;  ";
+jobTitle.style.cssText =
+  "color: #818181; margin: 0; line-height: 1.6; margin: 10px; ";
+numRow.style.cssText =
+  "display: flex; justify-content: space-around; ";
+numBer.style = 
+  "font-weight: bold; font-size: 25px; line-height: 1.6; margin-botton: 0;";
+numBer2.style = 
+  "font-weight: bold; font-size: 25px; line-height: 1.6; margin-botton: 0;";
+numBer3.style = 
+  "font-weight: bold; font-size: 25px; line-height: 1.6; margin-botton: 0;";
+numBer4.style = 
+  "font-weight: bold; font-size: 25px; line-height: 1.6; margin-botton: 0;";
 
 
-let backBtn = document.createElement("button");
-backBtn.innerHTML = "Go Back";
-showBtn.after(backBtn);
-backBtn.style.cssText = btnStyle;
 
-showBtn.onclick = tesTfun;
+// Style End
+
+
+
+
+
+
+
+
+
+
+
 
 // 100 addEventListener
+
+/*
+DOM [Add Event Listner]
+- addEventListner
+-Use Without On
+-Attach Multiple Event
+-Error Test
+*/
+
+// threeSort.onclick = one;
+// threeSort.onclick = tow;
+
+// function one (){
+//   console.log("Massage from Onclick 1");
+// }
+// function tow (){
+//   console.log("Massage from Onclick 2");
+// }
+
+// threeSort.addEventListener("click", function(){
+//   console.log("Massage from Onclick from Event")
+// })
+// threeSort.addEventListener("click", one);
+
+// document.addEventListener("click", function(e){
+//   if (e.target){
+//     console.log(e.target)
+//   }
+// })
+
