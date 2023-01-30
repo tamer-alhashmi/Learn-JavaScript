@@ -2756,6 +2756,38 @@ BOM [Browser Object Model]
 -clearTimeout(Identfier)
 */
 
-setTimeout(function(){
-  console.log(`Msg`);
-}, 3000);
+// setTimeout(function(){
+//   console.log(`Msg`);
+// }, 3000);
+
+// setTimeout(sayMsg, 3000);
+// function sayMsg(){
+//   console.log(`Iam Message`)
+// }
+
+//************ Example */
+// let counter = setTimeout(sayMsg, 3000);
+// function sayMsg(){
+//   console.log(`Iam Message For`);
+// }
+
+// let btn = document.querySelector("button");
+
+// btn.onclick = function(){
+//   clearTimeout(counter);
+// } 
+//************ Example */
+
+// let btn = document.querySelector("button");
+
+// let myGreeting = "Happy Birthday";
+// let myTimeout = setTimeout(myGreeting, 5000);
+
+// document.write(`<h2>${myGreeting}</h2>`);
+
+// function myStopFunction() {
+//   clearTimeout(myTimeout);
+// }
+// btn.onclick = function(){
+//   clearTimeout(myTimeout);
+// } 
