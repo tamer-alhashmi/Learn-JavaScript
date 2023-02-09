@@ -2918,63 +2918,64 @@ Info
 */
 
 // Local Storage => Property that let you accese to Storage Object
-// Set
-window.localStorage.setItem("color", "#009688");
-window.localStorage.setItem("btnColor", "white");
-window.localStorage.btnBg = "#F44336";
-window.localStorage.setItem("display", "flex");
-window.localStorage.fontSize = "20px"
-window.localStorage["backgroundColor"] =  "#009688";
-window.localStorage.fontWeight = "bold";
-window.localStorage.trans = "0.5s ease";
+// // Set
+// window.localStorage.setItem("color", "#009688");
+// window.localStorage.setItem("btnColor", "white");
+// window.localStorage.btnBg = "#F44336";
+// window.localStorage.setItem("display", "flex");
+// window.localStorage.fontSize = "20px"
+// window.localStorage["backgroundColor"] =  "#009688";
+// window.localStorage.fontWeight = "bold";
+// window.localStorage.trans = "0.5s ease";
 
-//Get
-console.log(window.localStorage.getItem("color")); // #F44336
-console.log(window.localStorage.color); // #F44336
-console.log(window.localStorage['color']); // #F44336
+// //Get
+// console.log(window.localStorage.getItem("color")); // #F44336
+// console.log(window.localStorage.color); // #F44336
+// console.log(window.localStorage['color']); // #F44336
 
 
 // Set Color in page
 // document.body.style.backgroundColor = window.localStorage.color;
 
-console.log(window.localStorage);//Storage {fontSize: '20px', color: '#F44336', display: 'flex', fontWeight: 'bold', backgroundColor: '#009688', …}
-console.log(typeof window.localStorage); // object
+// console.log(window.localStorage);//Storage {fontSize: '20px', color: '#F44336', display: 'flex', fontWeight: 'bold', backgroundColor: '#009688', …}
+// console.log(typeof window.localStorage); // object
 
-let header = document.querySelector("header")
-header.style.cssText = "display: flex; justify-content: space-between; background-color: #455A64; align-items: center;";
-let menu = document.querySelector("ul");
-menu.style.cssText = "list-style: none; padding: 4px 8px; display: flex;"
-let listIt = document.querySelectorAll("header ul li")
-let listItem =  "padding:10px; color: white;"; 
-;
+// let btn = document.querySelector("button");
+// btn.style.cssText =
+//   "position: fixed; bottom: 30px; right: 30px; color: white; cursor:pointer; background-color: #2d2d2d; border: none; border-radius: 4px; padding: 4px 8px ";
 
-
-let btn = document.querySelector("button");
-btn.style.cssText =
-  "position: fixed; bottom: 30px; right: 30px; color: white; cursor:pointer; background-color: #2d2d2d; border: none; border-radius: 4px; padding: 4px 8px ";
-
-btn.onclick = function () {
-  document.body.style.backgroundColor = window.localStorage.color;
-  document.body.style.color = window.localStorage.btnColor;
-  btn.style.color = window.localStorage.btnColor;
-  btn.style.backgroundColor = window.localStorage.btnBg;
-  // document.body.style.transition = window.localStorage.trans;
-  // document.body.ul
-
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-};
+// let header = document.querySelector("header");
+// let menuUl = document.querySelector("ul");
+// menuUl.style.cssText = "list-style: none; padding: 4px 8px; display: flex;";
+// let listLink = document.querySelectorAll("header a");
 
 
-const d = new Date();
-year = d.getFullYear();
-let para = document.getElementsByTagName("p");
-para.style.cssText = "color: red;";
 
-//  allLis.forEach(function(ele){
+// btn.onclick = function () {
+//   document.body.style.backgroundColor = window.localStorage.color;
+//   document.body.style.color = window.localStorage.btnColor;
+//   btn.style.color = window.localStorage.btnColor;
+//   btn.style.backgroundColor = window.localStorage.btnBg;
+//   header.style.cssText =
+//     "display: flex; justify-content: space-between; transition: 0.4s ease; background-color: #455A64; align-items: center;";
+//   listLink.forEach((a) => {
+//     a.style.cssText = "padding:10px; color: white; transition: 0.4s ease; text-decoration: none";
+//   });
+
+//   window.scrollTo({
+//     top: 0,
+//     left: 0,
+//     behavior: "smooth",
+//   });
+// };
+
+
+// const d = new Date();
+// year = d.getFullYear();
+// let para = document.getElementsByTagName("p");
+// para.style.cssText = "color: red;";
+
+//  allLis.forEach((ele)=>{
 //   ele.onclick = function (){
 //     // Remove Active Class Form All Elements
 //     allLis.forEach(function (ele) {
@@ -2988,3 +2989,43 @@ para.style.cssText = "color: red;";
 //     });
 //   };
 // });
+
+// <!-- 112 Local Storage Color Application Practice  -->
+
+let lis = document.querySelectorAll("ul li");
+let exp = document.querySelector(".experiment");
+
+//First you must be sure if the color value already in Local Storage
+// window.localStorage.clear();
+if (window.localStorage.getItem("color")){
+  // [1] Add color to div
+  exp.style.backgroundColor = window.localStorage.getItem("color");
+
+  // [2] Remove activ class from another lis
+  lis.forEach((li) => {
+    li.classList.remove("active");
+
+  // [3] Add active class to current color
+  document.querySelector(
+    `[data-color="${window.localStorage.getItem("color")}"]`
+  ).classList.add("active");
+  });
+}else{
+  console.log("No");
+}
+
+lis .forEach((li) =>{
+  li.addEventListener("click", (e) =>{
+    // console.log(e.currentTarget.dataset.color);
+    //remove active class from all lis
+    lis.forEach((li) =>{
+      li.classList.remove("active");
+    });
+    // Add Active Class to current element
+    e.currentTarget.classList.add("active");
+    // Add current color to Local Storage
+    window.localStorage.setItem("color", e.currentTarget.dataset.color);
+    // Change div background color
+    exp.style.backgroundColor = e.currentTarget.dataset.color;
+  })
+})
