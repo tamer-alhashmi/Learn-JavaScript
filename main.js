@@ -2217,6 +2217,11 @@ Use Events on JS
 --- ononsubmit
 */
 
+//*********************** Example */
+
+
+
+
 
 // let myBtn = document.getElementById("btn");
 // myBtn.onclick = function (){
@@ -2725,7 +2730,7 @@ DOM [Add Event Listner]
 //   }
 // })
 
-// 103 Alert, Confirm, Prompt
+//*********************************** */ 103 Alert, Confirm, Prompt
 /*
 BOM [Browser Object Model]
 - alert (Massage) => Nedd No Response onle ok available
@@ -2748,7 +2753,7 @@ BOM [Browser Object Model]
 // console.log(prompetMsg);
 
 
-// ************* 104 setTimeout And clearTimeout
+// ****************************************** 104 setTimeout And clearTimeout
 
 /*
 BOM [Browser Object Model]
@@ -2791,3 +2796,195 @@ BOM [Browser Object Model]
 // btn.onclick = function(){
 //   clearTimeout(myTimeout);
 // } 
+
+// ****************************************** 106 Window Location Object
+/*
+Bom [Browser object model]
+- location object 
+--- href Get / Set [URL || Hash || File || Mail]
+--- host
+--- hash
+--- protocol
+--- reload()
+--- replace()
+--- assign()
+*/
+
+// let btnConfirm = document.querySelector("button");
+// let btnhref = document.querySelector("button"[1]);
+// let btnhash = document.querySelector("button"[2]);
+// btnConfirm.onclick = function () {
+//   // location.assign("https://google.com");
+// };
+// btnhref.onclick = function () {
+//   location.href("https://google.com");
+// };
+// btnhash.onclick = function () {
+//   location.hash(
+//     "https://elhashmy-luxury.com/learn-css-in-arabic-2023-_-1_first-project-and-syntax/#%D9%85%D9%81%D8%A7%D9%87%D9%8A%D9%85_%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86_CSS"
+//   );
+// };
+// console.log("button"[0]);
+// console.log(location.href);
+// location.href = "https://google.com";
+// location.replace = ("https://google.com");
+
+// *********************************108 Window open and close
+/*
+BOM [Browser object model]
+ - open (url[opt], window name or target attr[opt], win Features[opt])
+ - close()
+ - window Features
+ -width[num]
+ -height[num]
+ -left[num]
+ -top[num]
+ */
+// setTimeout (function (){
+//   window.open(
+//     "https://elhashmy-luxury.com",
+//     "_blank",
+//     "width=900,height=1200, width=600; left=0,top=0"
+//   );
+// }, 2000)
+
+
+/*
+BOM [Browser Object Model]
+- History   SPI
+---Properties
+-----length
+---Methods
+------back()
+------forword()
+------go(Delta) => Position In History
+
+ Search [For advanced Knowledge]
+ - oushState() + replaceState
+*/
+// location = ("https://google.com")
+// let btn = document.querySelector("button")
+
+// btn.onclick = function(){
+//   // location.assign("https://elhashmy-luxury.com")
+//   console.log(history);
+//   console.log(history.length);
+//   console.log(history.pushState("1","https://google.com"));
+// }
+
+// ********************************* 109 Scroll, ScrollTo, ScrollBy
+/*
+BOM [Browser Object Model ]
+- stop()
+- print()
+- focus()
+- scroll(x, y || Options)
+- scrollTo(x, y || Options)
+- scrollBy(x, y || Options)
+*/
+// let btn = document.querySelector("button")
+// btn.style.cssText =
+//   "position: fixed; bottom: 30px; right: 30px; color: #012738; background-color: white; border: none; border-radius: 4px; padding: 4px 8px ";
+// btn.onclick = function(){
+//   //فتح نافذه جديده بعرض وطول ثابت***************************
+//   // let myNewWindow = window.open(
+//     //   "https://google.com",
+//     //   "",
+//     //   "width=500,height=500"
+//     // );
+//     // myNewWindow.focus();
+    
+//     // بالضغط علي زر معين يذهب إلي scroll محدد 
+//   window.scrollTo({
+//     top: 0,
+//     left: 0,
+//     behavior: "smooth"
+//   })
+// }
+// ************************** 111 Local Storage
+/*
+ BOM [Browser Object Model]
+Local Storage
+- setItem
+- getItem
+- removeItem
+- clear
+- key
+
+Info
+- No Expiration Time
+- HTTP And HTTPS
+- Praivet Tabe
+*/
+
+// Local Storage => Property that let you accese to Storage Object
+// Set
+window.localStorage.setItem("color", "#009688");
+window.localStorage.setItem("btnColor", "white");
+window.localStorage.btnBg = "#F44336";
+window.localStorage.setItem("display", "flex");
+window.localStorage.fontSize = "20px"
+window.localStorage["backgroundColor"] =  "#009688";
+window.localStorage.fontWeight = "bold";
+window.localStorage.trans = "0.5s ease";
+
+//Get
+console.log(window.localStorage.getItem("color")); // #F44336
+console.log(window.localStorage.color); // #F44336
+console.log(window.localStorage['color']); // #F44336
+
+
+// Set Color in page
+// document.body.style.backgroundColor = window.localStorage.color;
+
+console.log(window.localStorage);//Storage {fontSize: '20px', color: '#F44336', display: 'flex', fontWeight: 'bold', backgroundColor: '#009688', …}
+console.log(typeof window.localStorage); // object
+
+let header = document.querySelector("header")
+header.style.cssText = "display: flex; justify-content: space-between; background-color: #455A64; align-items: center;";
+let menu = document.querySelector("ul");
+menu.style.cssText = "list-style: none; padding: 4px 8px; display: flex;"
+let listIt = document.querySelectorAll("header ul li")
+let listItem =  "padding:10px; color: white;"; 
+;
+
+
+let btn = document.querySelector("button");
+btn.style.cssText =
+  "position: fixed; bottom: 30px; right: 30px; color: white; cursor:pointer; background-color: #2d2d2d; border: none; border-radius: 4px; padding: 4px 8px ";
+
+btn.onclick = function () {
+  document.body.style.backgroundColor = window.localStorage.color;
+  document.body.style.color = window.localStorage.btnColor;
+  btn.style.color = window.localStorage.btnColor;
+  btn.style.backgroundColor = window.localStorage.btnBg;
+  // document.body.style.transition = window.localStorage.trans;
+  // document.body.ul
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+};
+
+
+const d = new Date();
+year = d.getFullYear();
+let para = document.getElementsByTagName("p");
+para.style.cssText = "color: red;";
+
+//  allLis.forEach(function(ele){
+//   ele.onclick = function (){
+//     // Remove Active Class Form All Elements
+//     allLis.forEach(function (ele) {
+//       ele.classList.remove("active");
+//     });
+//     // Add Active Class To All Elements
+//     this.classList.add("active");
+//     //Hide All Divs
+//     allDivs.forEach(function(ele){
+//       ele.style.display = "none"
+//     });
+//   };
+// });
