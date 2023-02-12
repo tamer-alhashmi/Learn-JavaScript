@@ -2992,40 +2992,89 @@ Info
 
 // <!-- 112 Local Storage Color Application Practice  -->
 
-let lis = document.querySelectorAll("ul li");
-let exp = document.querySelector(".experiment");
+// let lis = document.querySelectorAll("ul li");
+// let exp = document.querySelector(".experiment");
 
-//First you must be sure if the color value already in Local Storage
+// //First you must be sure if the color value already in Local Storage
+// // window.localStorage.clear();
+// if (window.localStorage.getItem("color")){
+//   // [1] Add color to div
+//   exp.style.backgroundColor = window.localStorage.getItem("color");
+
+//   // [2] Remove activ class from another lis
+//   lis.forEach((li) => {
+//     li.classList.remove("active");
+
+//   // [3] Add active class to current color
+//   document.querySelector(
+//     `[data-color="${window.localStorage.getItem("color")}"]`
+//   ).classList.add("active");
+//   });
+// }else{
+//   console.log("No");
+// }
+
+// lis .forEach((li) =>{
+//   li.addEventListener("click", (e) =>{
+//     // console.log(e.currentTarget.dataset.color);
+//     //remove active class from all lis
+//     lis.forEach((li) =>{
+//       li.classList.remove("active");
+//     });
+//     // Add Active Class to current element
+//     e.currentTarget.classList.add("active");
+//     // Add current color to Local Storage
+//     window.localStorage.setItem("color", e.currentTarget.dataset.color);
+//     // Change div background color
+//     exp.style.backgroundColor = e.currentTarget.dataset.color;
+//   })
+// });
+
+//***************** 113 Session Storagr */
+/*
+BOM [Browser Model Object]
+- Session Storagr
+-- setItem
+-- getItem
+-- removeItem
+-- clear
+-- key
+*/
+
+/* 114 BOM Challenge */
+
+// let input = document.querySelector(".input");
+// let addBtn = document.querySelector(".add");
+// let tasks = document.querySelector(".tasks");
+
+// let titleRow = document.createElement("div");
+// titleRow.classList.add("title-row");
+
+// let taskstitle = document.createElement("p");
+
+// let delBtn = document.createElement("button");
+// delBtn.classList.add("del-btn");
+
+  
+//   tasks.append(titleRow);
+//   titleRow.prepend(taskstitle);
+//   titleRow.append(delBtn);
+
 // window.localStorage.clear();
-if (window.localStorage.getItem("color")){
-  // [1] Add color to div
-  exp.style.backgroundColor = window.localStorage.getItem("color");
+// if(window.localStorage.getItem("input-name")){
+//   taskstitle.textContent = window.localStorage.getItem("input-name");
+  
 
-  // [2] Remove activ class from another lis
-  lis.forEach((li) => {
-    li.classList.remove("active");
+//   delBtn.textContent = "Delete";
+// }
 
-  // [3] Add active class to current color
-  document.querySelector(
-    `[data-color="${window.localStorage.getItem("color")}"]`
-  ).classList.add("active");
-  });
-}else{
-  console.log("No");
-}
+// input.onblur = function(){
+//   window.localStorage.setItem("input-name", this.value);
 
-lis .forEach((li) =>{
-  li.addEventListener("click", (e) =>{
-    // console.log(e.currentTarget.dataset.color);
-    //remove active class from all lis
-    lis.forEach((li) =>{
-      li.classList.remove("active");
-    });
-    // Add Active Class to current element
-    e.currentTarget.classList.add("active");
-    // Add current color to Local Storage
-    window.localStorage.setItem("color", e.currentTarget.dataset.color);
-    // Change div background color
-    exp.style.backgroundColor = e.currentTarget.dataset.color;
-  })
-})
+
+
+//   taskstitle.textContent = window.localStorage.setItem(
+//     "input-name",
+//     this.value
+//   );
+// };
