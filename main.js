@@ -2994,6 +2994,7 @@ Info
 
 // let lis = document.querySelectorAll("ul li");
 // let exp = document.querySelector(".experiment");
+<<<<<<< HEAD
 
 // //First you must be sure if the color value already in Local Storage
 // // window.localStorage.clear();
@@ -3029,3 +3030,279 @@ Info
 //     exp.style.backgroundColor = e.currentTarget.dataset.color;
 //   })
 // })
+=======
+
+// //First you must be sure if the color value already in Local Storage
+// // window.localStorage.clear();
+// if (window.localStorage.getItem("color")){
+//   // [1] Add color to div
+//   exp.style.backgroundColor = window.localStorage.getItem("color");
+
+//   // [2] Remove activ class from another lis
+//   lis.forEach((li) => {
+//     li.classList.remove("active");
+
+//   // [3] Add active class to current color
+//   document.querySelector(
+//     `[data-color="${window.localStorage.getItem("color")}"]`
+//   ).classList.add("active");
+//   });
+// }else{
+//   console.log("No");
+// }
+
+// lis .forEach((li) =>{
+//   li.addEventListener("click", (e) =>{
+//     // console.log(e.currentTarget.dataset.color);
+//     //remove active class from all lis
+//     lis.forEach((li) =>{
+//       li.classList.remove("active");
+//     });
+//     // Add Active Class to current element
+//     e.currentTarget.classList.add("active");
+//     // Add current color to Local Storage
+//     window.localStorage.setItem("color", e.currentTarget.dataset.color);
+//     // Change div background color
+//     exp.style.backgroundColor = e.currentTarget.dataset.color;
+//   })
+// });
+
+//***************** 113 Session Storagr */
+/*
+BOM [Browser Model Object]
+- Session Storagr
+-- setItem
+-- getItem
+-- removeItem
+-- clear
+-- key
+*/
+
+/* 114 BOM Challenge */
+
+// let input = document.querySelector(".input");
+// let addBtn = document.querySelector(".add");
+// let tasks = document.querySelector(".tasks");
+
+// let titleRow = document.createElement("div");
+// titleRow.classList.add("title-row");
+
+// let taskstitle = document.createElement("p");
+
+// let delBtn = document.createElement("button");
+// delBtn.classList.add("del-btn");
+
+  
+//   tasks.append(titleRow);
+//   titleRow.prepend(taskstitle);
+//   titleRow.append(delBtn);
+
+// window.localStorage.clear();
+// if(window.localStorage.getItem("input-name")){
+//   taskstitle.textContent = window.localStorage.getItem("input-name");
+  
+
+//   delBtn.textContent = "Delete";
+// }
+
+// input.onblur = function(){
+//   window.localStorage.setItem("input-name", this.value);
+
+
+
+//   taskstitle.textContent = window.localStorage.setItem(
+//     "input-name",
+//     this.value
+//   );
+// };
+
+// 115 Destructuring *************************
+/*
+"Is a JavaScript expression thet allow us to extractc data from arrays,
+objects and maps, and set them into new "Distinct Variables."
+-Destructuring Array
+*/
+
+// let a = 1;
+// let b = 2;
+// let c = 3;
+// let d = 4;
+// let myFriends = ["Ahmed", "Tamer", "Hazem", "Ragheb"];
+// [
+//   a = "A", b, c, d, e = "Osama"
+// ] = myFriends;
+
+// console.log(a)
+// console.log(b)
+// console.log(c)
+// console.log(d)
+// console.log(e)
+
+// 116 Destructuring Part 2 *********************************
+
+// let myFriends = ["Ahmed", "Tamer", "Hazem", ["Ragheb", "Hisham", ["Ehab", "Moataz"]]];
+
+// let [ , , ,[a, ,[ ,b]]] = myFriends;
+// console.log(a); // Ragheb
+// console.log(b); // Moataz
+
+// 117 Destructuring Part 2 Swap Variables *************** VII ******************
+
+/*
+Sestructuring Array => Swapping Variables
+*/
+
+// let book = "Video";
+// let video = "Book";
+
+// // Swapping
+// [book, video] = [video, book];
+// console.log(book);
+// console.log(video);
+
+// 118, 119 Destructuring Object *************** VII ******************
+
+// const user = {
+//   theName: "Tamer",
+//   thaAge: 40,
+//   theTitle: "Developer",
+//   theCountry: "Egypt",
+//   thaColor: "black",
+//   skills:{
+//     html: 70,
+//     css: 80,
+//   }
+// }
+
+// let theName = user.theName;
+// let thaAge = user.thaAge;
+// let theTitle = user.theTitle;
+// let theCountry = user.theCountry;
+// let thaColor = user.thaColor;
+// let skills = user.skills;
+
+// ({ theName: na, thaAge: age, theTitle: tit, theCountry, thaColor: co = "Red", skills: { html: h, css }, } = user);
+
+// console.log(theName);
+// console.log(thaAge);
+// console.log(theTitle);
+// console.log(theCountry);
+// console.log(co);
+// // If you want change the name
+// console.log(na);
+// console.log(age);
+// console.log(tit);
+// console.log(theCountry);
+// console.log(co);
+// console.log(`My HTML Skills Progress Is ${h}`);
+// console.log(`My CSS Skills Progress Is ${css}`);
+
+// 120 Destructuring Function Parameters *************** VII ******************
+
+// const user = {
+//   theName: "Tamer",
+//   thaAge: 40,
+//   skills: {
+//     html: 70,
+//     css: 80,
+//   },
+// };
+
+// // showDetails(user)
+// // function  showDetails(obj){
+// //   console.log(`Your name is ${obj.theName}`);
+// //   console.log(`Your age is ${obj.thaAge}`);
+// //   console.log(`Your Country is ${obj.theCountry}`);
+// // }
+
+// showDetails(user);
+// function showDetails({ theName: n, thaAge: g, skills: {css: c} } = user) {
+//   console.log(`Your name is ${n}`);
+//   console.log(`Your age is ${g}`);
+//   console.log(`Your CSS Prosessing is ${c}`);
+// }
+
+// // Practice
+
+// let myFriens =
+// ["Name", "Sayed", "Ehab", "Hisham",
+//   ["Isslam", " Ahmed",
+//     ["Hashmi",
+//       ['html', 'CSS'],
+//     " Shreef"
+//     ]
+//   ]
+// ];
+
+// let [, , , , [a, , [b, ]]] = myFriens;
+// console.log(a); // Isslam
+// console.log(b); // Hashmi
+
+// let book = "Video";
+// let Video = "Book";
+
+// [book, Video] = [ Video, book];
+// console.log(book);
+// console.log(Video);
+
+/* خاصية الوضع المظلم */
+
+// let darkMode = false;
+// let bg = document.body;
+// let button = document.querySelector("button");
+// let text = document.querySelectorAll(".text");
+
+// button.onclick = function(){
+//   if(darkMode == false){
+//     darkMode = true;
+//     bg.style.backgroundColor = "var(--coffe-c)";
+//     text.forEach(function (h) {
+//       h.style.color = "white";
+//     });
+//     button.classList.toggle("btnDmode");
+//     button.textContent = "مضئ";
+//   }else {
+//     darkMode = false;
+//     bg.style.backgroundColor = "white";
+//     text.forEach(function(h){
+//       h.style.color = "var(--coffe-c)";
+//     });
+//     button.classList.toggle("btnDmode");
+//     button.textContent = "مظلم";
+//   }
+// }
+
+// **********************************  122 Destructuring Challenge
+// let chosen = 3;
+// let myFriends = [
+//   {title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"]},
+//   {title: "Moataz", age: 36, available: false, skills: ["Paytho", "Django"]},
+//   {title: "Ehab", age: 49, available: true, skills: ["PHP", "Laravel"]},
+// ];
+
+// let solotion = [
+//   {title: t1, age:g1, available: v1, skills: [,k1]},
+//   {title: t2, age:g2, available: v2, skills: [,k2]},
+//   {title: t3, age:g3, available: v3, skills: [,k3]},
+// ] = myFriends;
+
+// if (chosen === 1) {
+//   console.log(t1);
+//   console.log(g1);
+//   v1 === true ? console.log("Available") : console.log("Not Available");
+//   console.log(k3);
+// }else if (chosen === 2) {
+//   console.log(t2);
+//   console.log(g2);
+//   v2 === true ? console.log("Available") : console.log("Not Available");
+//   console.log(k2);
+// }else if (chosen === 3) {
+//   console.log(t3);
+//   console.log(g3);
+//   v3 === true ? console.log("Available") : console.log("Not Available");
+//   console.log(k3);
+// }else{
+//   console.log("PLZ Select in our range")
+// };
+
+>>>>>>> 04c60462edfeedf2382b75fb4ebbe5849f1f41ef
