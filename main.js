@@ -3268,3 +3268,693 @@ Sestructuring Array => Swapping Variables
 //   console.log("PLZ Select in our range")
 // };
 
+
+// Class
+// 152 - Static Properties and Methods
+
+// class User {
+//   static count = 0;
+//   constructor(id, username, salary){
+//     this.i = id;
+//     this.u = username;
+//     this.s = salary;
+//     User.count++;
+//   }
+//   //Static Method
+//   static sayHello(){
+//     return `SAY HELLO Class`;
+//   }
+//   static countMembers (){
+//     return`${this.count} member Created`
+//   }
+// }
+// let userOne = new User (100, "Elzero", 5000);
+// let userTow = new User (200, "Tamer", 8500);
+// let userthree = new User (600, "Sayed", 4000);
+// let userFour = new User (700, "Shereef", 4000);
+
+
+// console.log(userOne.u); 
+// console.log(userTow.u);
+// console.log(userOne.count);
+// console.log(User.count);
+// console.log(User.sayHello);
+// console.log(User.countMembers());
+
+
+// 154 - Class Inheritance ********************** VII *********************
+
+
+// Parent Class
+// class User {
+//   static count = 0;
+//   constructor(id, username){
+//     this.i = id;
+//     this.u = username;
+//   }
+//   //Static Method
+//   sayHello(){
+//     return `Hello ${this.u}`;
+//   }
+// }
+
+// Derived Class
+// class admin extends User {
+//   static count = 0;
+//   constructor(id, username, Permissions) {
+//     super(id, username);
+//     this.p = Permissions;
+//   }
+// }
+
+// class Superman extends admin {
+//   constructor(id, username, Permissions, ability) {
+//     super(id, username, Permissions);
+//     this.abi = ability;
+//   }
+// }
+
+// let userOne = new User (100, "Elzero");
+// let adminOne = new admin (110, " Tamer", 1);
+// let superOne = new Superman (210, " Timoor", 1, "Exellent");
+
+// console.log(adminOne); // admin {i: 110, u: ' Tamer', p: 1}
+// console.log(userOne.sayHello()); // SAY HELLO Elzero
+// console.log("#################");// 
+// console.log(adminOne.i); // 110
+// console.log(adminOne.u); // Tamer
+// console.log(adminOne.p); // 1
+// console.log(adminOne.sayHello()); // SAY HELLO  Tamer
+
+// console.log("#################");// 
+
+// console.log(superOne); // Superman {i: 210, u: ' Timoor', p: 1, abi: 'Exellent'}
+// console.log(superOne.i); // 210
+// console.log(superOne.u); // Timoor
+// console.log(superOne.p); // 1
+// console.log(superOne.abi); // Exellant
+// console.log(superOne.sayHello()); // Hello Tamer
+
+// 145 Class Encapsulatoin
+
+/*
+Encasulatio
+- Class fields are public by defult
+- Gurds the date aginst illegal access.
+- Help to achieve the target without revealing its complex details.
+- Will the app more flexible and manageable.
+- Simplifies the app.
+*/
+
+// class User {
+//   // Privet Property
+//   #e;
+//   constructor(id, username, eSalary) {
+//     this.i = id;
+//     this.u = username;
+//     this.#e = eSalary;
+//   }
+//   getSaary(){
+//     return parseInt(this.#e)
+//   }
+// }
+
+// let userOne = new User(100, "Elzero", 5000);
+
+// console.log(userOne.u);
+// console.log(userOne.getSaary() * 0.3);
+
+// Practice ************
+
+// class User {
+//   #hv;
+//   constructor (id, userName, age, skills, hiddenValue){
+//     this.id = id;
+//     this.uname = userName;
+//     this.g = age;
+//     this.skl = skills;
+//     this.#hv = hiddenValue;
+//   }
+
+//   showmePass (){
+//     return this.#hv;
+//   }
+  
+// }
+
+
+// let userOne = new User(100, "Tamer", 40, ["Html", "CSS"], "01234567890");
+
+//  console.log(userOne.id);
+//  console.log(userOne.uname);
+//  console.log(userOne.g);
+//  console.log(userOne.skl);
+//  console.log(userOne.showmePass());
+
+// 155 Prototype Introduction
+
+/*
+Prototype
+- Introduction
+- Prototype are the mechanisem by which JavaScript objects
+inherit features from one another.
+*/
+
+// class User {
+//   constructor (id, userName){
+//     this.id = id;
+//     this.u = userName;
+//   }
+  
+//   sayHello (){
+//     return `Hello ${this.u}`;
+//   }
+// }
+
+// let userOne = new User(100, "Elzero");
+// console.log(userOne.u);
+// console.log(User.prototype);
+// console.log(userOne);
+
+// let strOne =  "Tamer";
+// console.log(User.prototype);
+// console.log(String.prototype);
+
+
+// // *****************************156 Add to prototype chin and extend constructors features
+
+// User.prototype.sayWellcome = function (){
+//   return `Wellcome ${this.u}`;
+// }
+
+// Object.prototype.love = "I Love Mnos";
+// String.prototype.addDotBeforeAndAfter = function(val) {
+//   return `.${this}.`;
+// }
+
+
+// Object.prototype.mnss = ("Love you Monse");
+
+// 157 Object Meta Data and Decriptor Part 1
+
+// const myObject = {
+//   a: 1,
+//   b: 2,
+// }
+
+// Object.defineProperty(myObject, "c", {
+//   writable: true,// un writable
+//   enumerable: true, // Take this property out of any looping
+//   configurable: false,
+//   value: 3,
+// });
+
+//writable: false;
+// console.log(myObject);// {a: 1, b: 2, c: 3}
+// myObject.c = 100;
+// console.log(myObject); // {a: 1, b: 2, c: 3} No Change cuse it's writable: false.
+
+// myObject.c = 100;
+//writable: true;
+// console.log(myObject); // {a: 1, b: 2, c: 100}  Change cuse it's writable: true.
+
+// for (let prop in myObject) {
+//   console.log(prop, myObject[prop])
+// }
+// enumerable: false >> Out of looping
+// console.log(myObject); // a: 1 b: 2 
+
+// enumerable: true >> Dealing with looping
+// console.log(myObject); // a: 1 b: 2 c: 100
+
+// console.log(delete myObject.c);
+
+// // **************************************Function Practice
+
+// class User {
+//   constructor(usName, age) {
+//     this.u = usName, 
+//     this.g = age
+//   };
+//   ageToDays(age) {
+//     let result = this.g * 365;
+//     console.log(result);
+//   };
+  
+//   sayHello() {
+//     return `Hello ${this.u}`;
+//   }
+// }
+
+
+
+
+
+// let newus1 = new User("Tamer", 42);
+// let hour = ageToDays;
+
+// // console.log(newus1.ageToDays());
+// console.log(newus1.sayHello()); // Hello Tamer
+
+
+// 158 Object Meta Data and Description Part2
+
+// const myObject = {
+//   a: 1,
+//   b: 2,
+// }; // {a: 1, b: 2}
+
+// Object.defineProperties(myObject, {
+//   c: {
+//     configurable: true,
+//     value: 3,
+//   },
+//   d: {
+//     configurable: true,
+//     value: 4,
+//   },
+//   e: {
+//     configurable: true,
+//     value: 5,
+//   }
+// });
+
+// console.log(myObject);
+
+// // To check on element decriptore
+
+// console.log(Object.getOwnPropertyDescriptor(myObject, "d")); // {value: 4, writable: false, enumerable: false, configurable: true}
+// console.log(Object.getOwnPropertyDescriptors(myObject)); // {a: {…}, b: {…}, c: {…}, d: {…}, e: {…}}
+
+
+
+// 158 Data and Time Introduction
+
+/*
+  Data and Time
+  - Data Constructor
+
+  Static Method
+  - Date.new()
+
+
+  To track time 
+*/
+
+// let dataNow = new Date();
+
+// console.log(dataNow.getDate());// 23 >> Gets the day-of-the-month, using local time.
+// console.log(dataNow.getDay());// 4 >> Gets the day of the week, using local time
+// console.log(dataNow.getFullYear());// 2023 >> Gets the year, using local time.
+// console.log(dataNow.getHours());// 20 >> Gets the hours in a date, using local time.
+// console.log(dataNow.getMilliseconds());// 386 >> Gets the milliseconds of a Date, using local time.
+// console.log(dataNow.getUTCDate());// 23 >> Gets the day-of-the-month, using Universal Coordinated Time (UTC).
+
+// let dataNow = new Date();
+// let birthDay = new Date("Nov, 21, 80, 22:00");
+// let dateDefr = dataNow - birthDay;
+// console.log(dateDefr /1000 /60 /60 /24 / 30 / 12); // 42
+
+
+
+
+// let seconds = Date.now() / 1000;
+// console.log(`Seconds   ${Math.floor(seconds)}`); // Seconds   1677176957
+
+// let min = seconds / 60;
+// console.log(`min   ${Math.floor(min)}`); // min   27952949
+
+// let hour = min / 60;
+// console.log(`hour   ${Math.floor(hour)}`); // hour   465882
+
+// let days = hour / 24;
+// console.log(`days   ${Math.floor(days)}`); // days   19411
+
+
+// let month = days / 30;
+// console.log(`month   ${Math.floor(month)}`); // month   647
+
+// let year = month / 12;
+// console.log(`year   ${Math.floor(year)}`); // year   53
+
+
+// Get Data and Time
+
+// function solution(year) {
+//   let result = year;
+//   return result / 100;
+// }
+// result = 1988;
+// console.log(Math.ceil(result / 100));
+
+
+// function solution(year) {
+//   let result = year;
+//   return result / 100;
+// }
+// result = 1988;
+// console.log((result / 100));
+
+// const year = 1905;
+// function solution(year) {
+//   let result = year / 100;
+//   return result;
+// }
+
+// console.log(solution(year));
+
+
+// const year = 1988;
+// function solution(year) {
+//   let result = year / 100;
+//   return result;
+// }
+
+// const userName = "lodash";
+
+// function solution(inputString) {
+//   if (typeof inputString === String) {
+//     return true;
+//   };
+
+// }
+// console.log(solution(userName));
+
+// 161 Set Data And Time
+// let dateNow = new Date();
+// console.log(dateNow); // Fri Feb 24 2023 21:01:38 GMT+0200 (Eastern European Standard Time)
+
+// console.log("#".repeat(50));
+
+// // dateNow.setTime(0);// Thu Jan 01 1970 02:00:00 GMT+0200 (Eastern European Standard Time)
+// // console.log("#".repeat(50));
+
+// // dateNow.setTime(10000); // for mileseconds Thu Jan 01 1970 02:00:10 GMT+0200 (Eastern European Standard Time)
+
+// dateNow.setFullYear(2020, 1); // Mon Feb 24 2020 21:07:21 GMT+0200 (Eastern European Standard Time)
+// dateNow.setMonth(5); // Wed Jun 24 2020 21:08:54 GMT+0200 (Eastern European Standard Time)
+// dateNow.setMonth(5, 2); // Wed Jun 02 2020 21:08:54 GMT+0200 (Eastern European Standard Time)
+// dateNow.setHours(5, 2); // Tue Jun 02 2020 05:02:23 GMT+0200 (Eastern European Standard Time)
+// dateNow.setMinutes(5, 2); // Tue Jun 02 2020 05:05:02 (Eastern European Standard Time)
+// console.log(dateNow);
+
+// Formating Dae And Time
+
+/*
+Format
+- "Nov 21 1980"
+- "11/21/1980"
+- "1980-11-21" ==> Iso International Standard
+- "1980 11"
+- "1980"
+- "80"
+- "1980, 10, 21, 2, 10, 0"
+- "1982-10-25T06:10:002"
+*/
+
+// console.log(Date.parse("Nov 21 1980"))
+
+// let data1 = new Date(0);//Thu Jan 01 1970 02:00:00 GMT+0200 (Eastern European Standard Time)
+// console.log(data1);
+
+// let data2 = new Date(343605600000);//Fri Nov 21 1980 00:00:00 GMT+0200 
+// console.log(data2);
+
+// let data3 = new Date("1980-11-21");//Fri Nov 21 1980 02:00:00 
+// console.log(data3);
+
+// let data4 = new Date(1980, 10, 21, 2, 10, 0);//Fri Nov 21 1980 02:10:00 GMT+0200
+// console.log(data4);
+
+// let data5 = new Date("1980-11-21T06:10:00Z");// Using Time Zone T>Time>Z
+// console.log(data5);
+
+
+// 163 Tracking Oberetions Time ***********************
+
+// Start Time
+
+// let start = new Date();// Time before progress
+// console.log(start);
+
+// // Operation
+// for(let i = 0; i< 100; i++){
+//   // document.write(`<div>${i}</div>`); // Loop to Creating a 100 Divs or more.
+//   let div = document.createElement("div");
+//   div.appendChild(document.createTextNode(i));
+//   document.body.appendChild(div); // Creating a 100 Divs or more.
+// }
+
+// // Time End
+// let end = new Date();
+
+// console.log(end);
+
+// // Operation Duration
+// let duration = end -start;
+// console.log(duration);
+
+// Generate Function Introduction
+
+// function* generateNumber(){
+//   yield 1;
+//   console.log("Hello From yield 1");
+//   yield 2;
+//   // alert("Hello From yield 2")
+//   yield 3;
+//   // alert("Hello From yield 3")
+//   yield 4;
+//   // alert("Hello ًWe Done")
+// }
+
+// let generator = generateNumber();
+// console.log(typeof generator);
+// console.log(generator);
+// // console.log(generator.next().done);// false
+// // console.log(generator.next().value);// 3
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+// for (let value of generateNumber()){
+//   console.log(value);// Results come with looping on the general function name. 
+// };
+
+// for (let value of generator) {
+//   console.log(value);// Empty Couse we already used afunction , and now it's Empty
+// };
+
+//  165 Delegate Generator Function *******************************
+
+// function* generateNums(){
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
+
+// function* generateLetters(){
+//   yield "A";
+//   yield "B";
+//   yield "C";
+// }
+
+// function* generateAll() {
+//   yield* generateNums();
+//   yield* generateLetters();
+//   yield* [3, 4, 5];
+// }
+
+// let generator = generateAll();
+// console.log(generator.next());// salse
+// console.log(generator.next());// false
+// console.log(generator.next());// false
+// console.log(generator.next());// false
+// console.log(generator.next());// false
+// console.log(generator.next());// false
+// // console.log(
+//   // generator.return((location.href = "https://elhashmy-luxury.com/blog"))
+// // );
+// console.log(generator.next());// false
+// console.log(generator.next());// false
+// console.log(generator.next());// false
+// console.log(generator.next());// true
+
+
+// location.replace = ("https://google.com");
+
+// 166 Generate Infintie Numbers***************************************
+
+
+// function* generateNums(){
+//   yield 1;
+//   yield 2;
+//   yield 3;
+//   // return "A";
+//   yield 4;
+// }
+// let generator = generateNums();
+
+// console.log(generator.next());// {value: 1, done: false}
+// console.log(generator.next());// {value: 2, done: false}
+// console.log(generator.next());// {value: 3, done: false}
+// console.log(generator.return ("A"));// {value: 'A', done: true}
+// console.log(generator.next());// {value: undefined, done: true}
+
+
+// 167 , 168 Model Import and Export & Named vs Default Export And Import All
+
+// let a = 1;
+// let arr = [1, 2, 3, 4];
+
+// function saySomething(){
+//   return `Something`;
+// } // anonymous function to export with any aliase
+
+// export { a as myNumber, arr, saySomething};
+
+// export default function sayHello(){
+//   return `Hello`;
+// }
+
+// console.log(saySomething());
+
+// ************************************** 169 & 170 JSON  [ JavaScript Object Notetion ]**************************
+
+/*
+JSON Sentax
+- Data addes inside Curly Braces { }
+- Data added with key : value
+- Key should be String wrapped in double quotes
+- Data seperated by comma
+- Square braces for arrays
+- Curl braces {} for Objects
+
+Available Data Types
+- string
+- Number
+- Object
+- Array
+- Bollean Value
+- null
+*/
+
+// 171 ****************************************************  API
+
+//  172 ******************************* Parse and stringify   
+
+// const myJsonObjectFromServer = '{"Username": "Tamer", "Age": 42}';
+
+// console.log(typeof myJsonObjectFromServer);
+// console.log(myJsonObjectFromServer);
+
+// console.log("#".repeat(50));
+
+// const myJsObject = myJsonObjectFromServer;
+// console.log(typeof myJsObject);
+// console.log(myJsObject);
+
+
+// myJsObject = {
+//   Username: "Timo",
+//   Age: 40,
+// }
+
+// const myJsonObjectToServer = JSON.stringify(myJsObject);
+// console.log(typeof myJsonObjectToServer);
+// console.log(myJsonObjectToServer);
+
+//  all Stack and Web API
+// class User {
+//   constructor(userName, age, usrId) {
+//     (this.us = userName), (this.g = age), (this.id = usrId);
+//   }
+
+//   ageToDays() {
+//     let ageToDay = this.g * 356;
+//     return `Hello ${this.us} Your age by Days is ${ageToDay}`;
+//   }
+
+// }
+
+
+  
+//   let userOne = new User("Tamer", 40, 102)
+//   console.log(userOne);
+//   console.log(userOne.ageToDays());
+
+
+// class User {
+//   constructor(usName, age) {
+//     this.u = usName, 
+//     this.g = age
+//   };
+//   ageToDays(age) {
+//     let result = this.g * 365;
+//     console.log(result);
+//   };
+  
+//   sayHello() {
+//     return `Hello ${this.u}`;
+//   }
+// }
+
+
+
+
+// function userName (){
+//   console.log(`Your Name is ${userName}`)
+// }
+// function age (){
+//   userName();
+//   console.log(`Your Age is ${age}`)
+// }
+//   age();
+//   if (usrId === undefined){
+//     function generateId(){
+//       for (let i = 0; i <= user.length; i++){
+//         usrId[i++];
+//       }
+//     }
+//     // usrId === generateId;
+//   }
+//   console.log(`Your New ID is ${newid}`);
+
+
+// console.log(user)
+// console.log();
+
+
+
+// let products = ["Keybord", "Mouse", "Pen", "Pad", "Monitor"];
+// let color = ["Red", "Green", "Black"];
+// let models = [2020, 2021];
+
+// for (let i = 0; i < products.length; i++){
+//     console.log("=" .repeat(15))
+//     console.log(`# ${products[i]}`);
+//     console.log("=" .repeat(15))
+//     console.log(`- Colors: `)
+//     for (let j = 0; j <color.length; j++){
+//         console.log(color[j]);
+//     }
+//     console.log("- Models: ")
+//     for (let m = 0; m < models.length; m++){
+//         console.log(models[m]);
+//     }
+// }
+
+// 175 Event Loop And Callback Queue
+
+// fetch("https://tamer-alhashmi.github.io/Learn-Javascript/EmployeeData.json").then(res=>res.json()).then(data=>console.log(data));
+let myRecuest = new XMLHttpRequest();
+myRecuest.open("GET", "https://tamer-alhashmi.github.io/Learn-Javascript/EmployeeData.json");
+myRecuest.send();
+console.log(myRecuest);
+
+myRecuest.onreadystatechange = function (){
+  if (this.readyState === 4 && this.status === 200 ) {
+    console.log("We are good")
+  }
+}
