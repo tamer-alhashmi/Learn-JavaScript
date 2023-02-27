@@ -3947,14 +3947,264 @@ Available Data Types
 
 // 175 Event Loop And Callback Queue
 
-// fetch("https://tamer-alhashmi.github.io/Learn-Javascript/EmployeeData.json").then(res=>res.json()).then(data=>console.log(data));
-let myRecuest = new XMLHttpRequest();
-myRecuest.open("GET", "https://tamer-alhashmi.github.io/Learn-Javascript/EmployeeData.json");
-myRecuest.send();
-console.log(myRecuest);
 
-myRecuest.onreadystatechange = function (){
-  if (this.readyState === 4 && this.status === 200 ) {
-    console.log("We are good")
-  }
+// ******************************* Start json Project     **************************************
+
+// let myRequest = fetch("https://tamer-alhashmi.github.io/Learn-Javascript/EmployeeData.json").then(res=>res.json()).then(data=>console.log(data));
+// fetch("https://tamer-alhashmi.github.io/Learn-Javascript/json/ProductJson.json").then(res=>res.json()).then(data=>console.log(data));
+
+/*
+{
+    "id": 4051,
+    "name": "manoj",
+    "email": "manoj@gmail.com",
+    "password": "Test@123",
+    "about": null,
+    "token": "7f471974-ae46-4ac0-a882-1980c300c4d6",
+    "country": null,
+    "location": null,
+    "lng": 0,
+    "lat": 0,
+    "dob": null,
+    "gender": 0,
+    "userType": 1,
+    "userStatus": 1,
+    "profilePicture": "Images/9b291404-bc2e-4806-88c5-08d29e65a5ad.png",
+    "coverPicture": "Images/44af97d9-b8c9-4ec1-a099-010671db25b7.png",
+    "enablefollowme": false,
+    "sendmenotifications": false,
+    "sendTextmessages": false,
+    "enabletagging": false,
+    "createdAt": "2020-01-01T11:13:27.1107739",
+    "updatedAt": "2020-01-02T09:16:49.284864",
+    "livelng": 77.389849,
+    "livelat": 28.6282231,
+    "liveLocation": "Unnamed Road, Chhijarsi, Sector 63, Noida, Uttar Pradesh 201307, India",
+    "creditBalance": 127,
+    "myCash": 0
 }
+*/
+
+// Loop On Date
+
+
+
+
+      // class User {
+      //   constructor(
+      //   id,
+      //   name,
+      //   email,
+      //   password,
+      //   about,
+      //   token,
+      //   country,
+      //   location,
+      //   lng,
+      //   lat,
+      //   dob,
+      //   gender,
+      //   userType,
+      //   userStatus,
+      //   profilePicture,
+      //   coverPicture,
+      //   enablefollowme,
+      //   sendmenotifications,
+      //   sendTextmessages,
+      //   enabletagging,
+      //   createdAt,
+      //   updatedAt,
+      //   livelng,
+      //   liveLocation,
+      //   creditBalance,
+      //   myCash,
+      //   )
+      // }
+
+
+
+// let myRequest = new XMLHttpRequest();
+// myRequest.open(
+//   "GET",
+//   "https://tamer-alhashmi.github.io/Learn-Javascript/EmployeeData.json"
+// );
+// myRequest.send();
+
+
+// let section = document.createElement("div");
+// section.className = "section";
+// document.body.append(section);
+
+
+
+// let empTable = document.createElement("table");
+// let empThead = document.createElement("thead");
+// let empHeadTr = document.createElement("tr");
+// let empTheadTh = document.createElement("th");
+// let empTbody = document.createElement("tbody");
+// let empTbodyTr = document.createElement("tr");
+// let empTbodyTd = document.createElement("td");
+
+
+// myRequest.onreadystatechange = function () {
+//   if (this.readyState === 4 && this.status === 200) {
+//     // console.log(this.responseText);
+//     let jsData = JSON.parse(this.responseText);
+//     console.log(jsData);
+    
+    
+//     jsData.push({
+//         "id": jsData.id,
+//         "name": jsData.name,
+//         "email": jsData.email,
+//         "country": jsData.country
+//     });
+//     // console.log(jsData)
+//     for (let i = 0; i <= jsData.length; i++){
+      
+      
+      
+//       section.append(empTable);
+//       empTable.append(empThead);
+//       empThead.append(empHeadTr);
+//       empHeadTr.append(empTheadTh);
+//       empTable.appendChild(empTbody);
+//       empTbody.append(empTbodyTr);
+//       empTbodyTr.append(empTbodyTd);
+//       // empTbodyTr.append(empTbodyTd);
+      
+//       empHeadTr.append(empTheadTh);
+//       empHeadTr.appendChild(empTheadTh);
+//       empHeadTr.appendChild(empTheadTh);
+//       empHeadTr.appendChild(empTheadTh);
+//     console.log(jsData[0].id);
+//     }
+//   }
+// };
+
+// const myPromis = new Promise((resolveFunction, rejectFunction) => {
+//   let connect = true;
+//   if (connect) {
+//     resolveFunction("Conection Established");
+//   } else {
+//     rejectFunction(Error("connection Failed"));
+//   }
+// }).then(
+//   (resolveValue) => console.log(`Good ${resolveValue}`),
+//   (rejectValue) => console.log(`Bad ${rejectValue}`)
+// );
+
+// myPromis.then(
+//   (resolveValue) => console.log(`Good ${resolveValue}`), // Promise {<fulfilled>: 'Conection Established'}
+//   (rejectValue) => console.log(`Bad ${rejectValue}`)
+// );
+// myPromis.then(
+//   (resolveValue) => console.log(`Good ${resolveValue}`), // Promise {<fulfilled>: 'Conection Established'}
+//   (rejectValue) => console.log(`Bad ${rejectValue}`)
+// );
+
+// ******************************************* MyPromise + json Data
+
+let myRequest = new XMLHttpRequest();
+myRequest.open(
+  "GET",
+  "https://tamer-alhashmi.github.io/Learn-Javascript/EmployeeData.json"
+);
+myRequest.send();
+
+
+  let myheading = document.createElement("h2");
+  let myPara = document.createElement("h3");
+  myheading.after(myPara);
+  document.body.append(myheading);
+
+
+  (myRequest.onreadystatechange = function () {
+    const myPromise = new Promise(
+      (resolveFunction, rejectFunction) => {
+        if (
+          myRequest.readyState === 4 &&
+          myRequest.status === 200
+          ) {
+            (resolveFunction = "Connection Established"),
+              (myheading.textContent = `myPromise: ${resolveFunction}`),
+              (myPara.textContent = "You Doing Great With myPromise");
+
+            let jsData = JSON.parse(this.responseText);
+            console.log(jsData);
+
+            jsData.push({
+              id: jsData.id,
+              empName: jsData.name,
+              email: jsData.email,
+              country: jsData.country,
+            });
+
+            let section = document.createElement("div");
+            section.className = "section";
+
+            for (let i = 0; i <= jsData.length; i++) {
+
+              let empPhoto = document.createElement("img");
+              empPhoto.className = "empPhoto";
+              let empTitle = document.createElement("h2");
+              empTitle.className = "empTitle";
+              let empId = document.createElement("span");
+              empId.className = "empId";
+              let empEmail = document.createElement("p");
+              empEmail.className = "empEmail";
+              let empLocation = document.createElement("address");
+              empLocation.className = "empLocation";
+              let hr = document.createElement("hr");
+
+              document.body.append(section);
+              let card = document.createElement("div");
+              card.className = "card";
+
+              let dataInfo = document.createElement("div")
+              dataInfo.className = "dataInfo";
+
+              let photoMask = document.createElement("div");
+              photoMask.className = "photoMask";
+
+              let cridt = document.createElement("span");
+              cridt.className = "cridt";
+
+              let joinDate = document.createElement("p");
+              joinDate.className = "joinDate"
+
+              section.appendChild(card);
+              card.append(empPhoto);
+              card.append(photoMask);
+              card.append(dataInfo);
+              dataInfo.append(empTitle);
+              dataInfo.append(empId);
+              dataInfo.append(cridt);
+
+              dataInfo.append(empEmail);
+              dataInfo.append(joinDate);
+              dataInfo.append(hr);
+              dataInfo.append(empLocation);
+              empPhoto.src = "/photos/prof1.jpg";
+              empTitle.textContent = jsData[i].name;
+              empId.textContent = `Code: ${jsData[i].id}`;
+              cridt.textContent = `Cridt: ${jsData[i].creditBalance}`;
+              empEmail.textContent = jsData[i].email;
+
+              let dateJoin = jsData[i].createdAt;
+              let dateformat = /\w/ig;
+              console.log(dateJoin.dateformat);
+              joinDate.textContent = `Data Join: ${(jsData[i].createdAt).dateformat
+              }`;
+              empLocation.textContent = `liveLocation: ${jsData[i].liveLocation}`;
+              
+            }
+
+          } else {
+            (rejectFunction = `With "myPromis"`),
+              (myheading.textContent = `Connection Failed ${rejectFunction},`),
+              (myPara.textContent = "You Faild To Connect With myPromise");
+          }
+        }
+      );
+  });

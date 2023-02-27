@@ -60,7 +60,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     behavior: smooth;
     outline: none;
-    direction: rtl;
+    direction: ltr;
 }
 /* .form {
     background-color: #eee;
@@ -122,32 +122,120 @@ background-color: red;
 :root{
     --coffe-c: rgb(82, 64, 49);
 }
-h2 {
-    font-weight: bold;
-    font-size: 40px;
+
+
+
+
+/* Start Json Project */
+
+.section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    background-color: #eee;
+    /* position: relative; */
+    max-width: 100%;
+    /* height: 100%; */
+    gap: 20px 20px;
+    padding: 20px;
+    overflow: hidden;
 }
-button {
+
+
+.card {
+    background-image: url(../photos/G2vertical.jpg);
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    position: relative;
+    max-width: 300px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 0 20px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+.card::before {
+    content: '';
+    clip-path: polygon(25% 0, 15% 15%, 50% 35%, 85% 15%, 75% 0, 100% 0, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0 0);
     position: absolute;
-    bottom: 30px;
-    right: 30px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: none;
-    background-color: var(--coffe-c)!important;
-    color: white!important;
-    font-weight: 600;
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 50px;
+    z-index: 1;
 }
-/* button::before{
+
+.empPhoto {
+    position: relative;
+    width: 300px;
+    margin-top: 90px;
+    margin-bottom: 0px;
+}
+
+.photoMask {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+    z-index: 111111;
+}
+
+.photoMask::before {
     content: '';
+    position: absolute;
+    background-color: darkslateblue;
+    width: 200px;
+    height: 50px;
+    top: -119px;
+    right: -108px;
+    transform: rotate(140deg);
+    border-radius: 0 2px 20px 0;
 }
-button::after{
+.photoMask::after {
     content: '';
-} */
-.btnDmode {
-    background-color: white!important;
-    color: var(--coffe-c)!important;
+    position: absolute;
+    background-color: rgb(114, 61, 139);
+    width: 200px;
+    height: 50px;
+    top: 23px;
+    right: -129px;
+    transform: rotate(50deg);
+    border-radius: 0 2px 20px 0;
 }
-h2, h3, p{
-    color: rgb(82, 64, 49);
+
+
+
+
+.dataInfo {
+    margin-bottom: 40px;
+    min-height: 75%;
+    min-width: 100%;
+    z-index: 10;
+    flex-grow: inherit;
+}
+
+.empTitle {
+    text-align: center;
+}
+
+.empId {
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.cridt {
+    margin-left: 100px;
+}
+.empEmail {
+    font-size: 14px;
+}
+.empLocation {
+
 }
